@@ -20,9 +20,11 @@
 
 <#if transList?exists>
 	<h2>${loc.heading_transcriptions}</h2>
+	<ul>
 	<#list transList as row>
 		<li> <a href="play?trans=${row.id}">${row.title}</a>
 	</#list>
+	</ul>
 </#if>
 
 </#if>
