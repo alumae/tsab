@@ -1,68 +1,96 @@
 html, body {
-	height:100%;
-	margin-top:20px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	border: 0;
+	color: #565656;
+        background-color: #c8d2d4;
 }
 
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:0.8em;
-	color:#333333;
-	background:#f4f4f4;
-	text-align: center;	
+
+
+body, img, p, h1, h2, h3, h4, h5, ul, ol, li, form, blockquote {
+	margin: 0;
+	padding: 0;
 }
 
-h1 {
-	font-family:Times;
-	font-style:italic;
-	color:#776b57;
-	font-size: 24px;
+p {
+	line-height: 20px;
+	padding: 10px 0;
 }
 
-h2 {
-	font-family:Times;
-	font-style:italic;
-	color:#776b57;
-	font-size: 18px;
+h1, h2, h3, h4, h5 {
+	padding: 10px 0;
+	font-family: Georgia;
+
 }
 
-h3 {
-	font-family:Times;
-	font-style:italic;
-	color:#776b57;
-	font-size: 14px;
+ul, ol {
+	padding: 10px 0;
+	list-style-type: square;
 }
+
+small {
+	font-size: 11px;
+}
+
+code {
+	background: #FFFFC1;
+}
+
+
+a:hover {
+	text-decoration: none;
+}
+
+
+a {
+	color:#307dc3;	
+	text-decoration:none;
+}
+a:visited {
+	color:#307dc3;	
+}
+a:hover {
+	text-decoration:underline;
+}
+
+a img {
+	border: none;
+}
+
+blockquote p {
+	padding: 5px 0;
+}
+
+
+
 
 #heading  {
   height:68px;  
-  width:950px;
+  padding-top: 20px;  
   right:0px;
   margin-top:0px;
   clear:both;
+  color: #9D9D9D;
+  background-color: #17374d;
+  border-right:#17374d 10px solid;
 }
 
 #content {
-	background-color:#ede8e1;
+	background-color:#f6f5f5;
 	width:949px;
-	border-right:#1c1c1c 1px solid;
-	border-bottom:#1c1c1c 1px solid;
 	
-	background-image:url(../img/tsab-left-border.gif);
 	background-position:left;
 	background-repeat:repeat-y;
-
+ 	border-bottom: black 1px dotted;
 	padding-bottom:50px;
-	padding-top:42px;
+	margin-top:42px;
 	text-align:left;
 	min-height:500px;
+	clear: both;
 }
 #content-outer{
 	width:950px; /* 660=950-290 */
-	border-right:#626262 1px solid;
-	border-bottom:#626262 1px solid;	
 	min-height:500px;
 }
 
@@ -71,13 +99,17 @@ h3 {
 	width:950px;
 	vertical-align:text-top;
 	min-height:500px;
+	clear: both;
+	background-color: #f6f5f5;
 }
 
 #left-container {
 	width:220px;
 	float:left;
-	margin-left:80px;
+	padding-left:50px;
 	text-align:left;
+	min-height:500px;
+
 }
 #right-container {
 	width:620px;
@@ -87,30 +119,41 @@ h3 {
 }
 
 
+#right-container h1 {
+	margin:2px 0 3px -10px;
+}
+
+#right-container li {
+padding:5px 0 5px 5px;
+}
+
 .category
 {
 	outline:0; 
 	display: block;
 	width: 180px;
 	margin-bottom:4px;
-	font-style:italic;
 	font-weight:bold;
-	background: #c1b9a4;
+	background: #2c6288;
 	padding: 5px 0;
+	color: #fff;
 	text-align: center;
 	text-decoration: none;
 	font-size: 18px;
-	font-family:times;		
-	color: #3a3a3a;
-	text-shadow: #e6e6e6 1px 1px 1px;
 	
-	-moz-box-shadow: 1px 1px 1px #b7b3ae;
-	-webkit-box-shadow: 1px 1px 1px #b7b3ae;
-	box-shadow: 1px 1px 1px #b7b3ae;
 	
 }
 
-#left-container  a {
+.category a {
+	color: #fff;
+}
+
+a.category:visited {
+	color: #fff;
+}
+
+
+#left-container  axxx {
 	color: #3a3a3a;
 }
 
@@ -133,25 +176,17 @@ h3 {
 }
 
 #search {
-	margin-bottom:20px;
+	margin-bottom:20px;i
+	font-size: 22px;
 	
 }
 
 #search input {
-	background: #eeeeee;
-	border:1px solid #c1b9a4;
+	background: #FFF;
+	border:1px solid #ccc;
 }
 
-a {
-	color:#307dc3;	
-	text-decoration:none;
-}
-a:visited {
-	color:#307dc3;	
-}
-a:hover {
-	text-decoration:underline;
-}
+
 
 .subcat
 {
@@ -159,40 +194,24 @@ a:hover {
 	width: 158px;	
 	padding: 5px 5px 5px 5px;
 	padding-top:0px;
+	padding-right:7px;
 	margin-top:0px;
 	margin-left:10px;
 	margin-right:10px;
 	margin-bottom:10px;
-	background:#eae5de;
-	border-left:#c1b9a4 1px solid;
-	border-bottom:#c1b9a4 1px solid;
-	border-right:#c1b9a4 1px solid;
+	background:#eee;
+	color: #000;
+	font-weight:bold;
 }
 
 .subcat a {
-	color: #675a46;
 	text-decoration:none;
 	font-size:11px;
-	font-family: verdana;
 }
 .subcat a:hover {
 	text-decoration:underline;
-	color: #423a2d;
 }
 
-
-#soundmanager-debug {
-	width: 600px;
-	background:#FFFFFF;
-	border: 1px solid #ddd;
-	padding: 1px;
-	text-align: left;
-	height: 450px;
-	overflow: scroll;
-	overflow-x:hidden
-	font-size:6px;
-	font-family: arial;
-}
 
 #lines 
 {
@@ -372,7 +391,7 @@ a:hover {
 	color:gray;
 }
 .scal .dayselected{
-	background-color: #cdc6b5;
+	background-color: #555;
 	color: white;
 }
 .scal .daycurrent{
@@ -411,6 +430,6 @@ a:hover {
 }
 
 .breadcrumb {
-	font-size:9px;
+	font-size:12px;
 	color:#666666;
 }
