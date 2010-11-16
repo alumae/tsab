@@ -219,6 +219,9 @@ a.category:visited {
 	padding: 1px;
 	text-align: left;
 	margin-top: 10px;
+	height: 450px;
+	overflow: scroll;
+	overflow-x:hidden
 	
 	
 }
