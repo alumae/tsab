@@ -477,6 +477,25 @@
   </target>
 
 
+  <!-- Redeploy web stuff ONLY -->
+  <target name="redeploy-web">
+	  <echo>=== DEPLOY WEB pages ===</echo>
+	  <!-- trying to be explicit about what i put out there -->
+	  <copy todir="${catalina.home}/webapps/${app.path}">
+	    <fileset dir="${web.home}">
+	      <include name="**/*.jsp"/>
+	      <include name="**/*.html"/>
+	      <include name="**/*.css"/>
+	      <include name="**/*.gif"/>
+	      <include name="**/*.jpg"/>
+	      <include name="**/*.png"/>
+	      <include name="**/*.js"/>
+	      <include name="**/*.ftl"/>	    	
+	    </fileset>
+	  </copy>
+  </target>		
+	
+	
 <!-- ==================== Reload Target =================================== -->
 
 <!--
