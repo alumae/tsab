@@ -2,7 +2,7 @@
 2. Update build.properties to point to apache dir.
 3. Add following to apache conf/tomcat-users.xml:
 <role rolename="manager"/>
-<user username="tsabadmin" password="f09fCiG" roles="manager"/>
+<user username="tsabadmin" password="change_to_manager_password" roles="manager"/>
 4. Ensure that mp3splt is installed and available from PATH
 5. Ensure that ffmpeg is installed and available from PATH
 6. define environment variable TSAB.HOME and make sure it's visible to tomcat. Create directories "audio" and "lucene" at that dir.
