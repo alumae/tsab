@@ -158,22 +158,21 @@ a.category:visited {
 }
 
 #footer {
-	font-family:verdana;
 	font-weight:normal;
-	font-size:10px;
-	color:#999999;
+	font-size:12px;
+	background-color: #252525;
 	text-align:center;
 	padding-top:10px;
+	padding-bottom:10px;
+	color: #CECECE;
 }
 
 #footer a {
-	color:#666666;
-	text-decoration:none;
-}
-#footer a:hover {
-	color:#333333;
+	color: #CECECE;
 	text-decoration:underline;
 }
+
+
 
 #search {
 	margin-bottom:20px;i
@@ -221,9 +220,6 @@ a.category:visited {
 	text-align: left;
 	margin-top: 10px;
 	
-	height: 450px;
-	overflow: scroll;
-	overflow-x:hidden
 	
 }
 #lines .line

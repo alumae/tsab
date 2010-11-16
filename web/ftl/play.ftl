@@ -4,10 +4,14 @@
 <#global headExtra>
 
 <#if zebug?exists>
-	var zebug = true;
+	<script type='text/javascript'>
+	 	var zebug = true;
+	</script>
 	<script type="text/javascript" src="../soundmanager/script/soundmanager2.js"></script>
 <#else>
-	var zebug = false;
+	<script type='text/javascript'>
+		var zebug = false;
+	</script>		
 	<script type="text/javascript" src="../soundmanager/script/soundmanager2-nodebug-jsmin.js"></script>
 </#if>
 
