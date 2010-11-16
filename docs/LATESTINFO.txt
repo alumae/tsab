@@ -1,0 +1,19 @@
+Known issues
+  audio buffering is not yet using 1-min splits properly (need a bit more experimenting to prevent small audible gaps between 1-min split fragments)
+  search result play button is playing from the beginning, not from the finding (will be fixed together with the proper buffering)
+  search results are not paginated
+  
+Highlights
+  command "tsabcli.sh crawl" scans specified dir recursively, adds all .trs files with audio and creates categories with the specified name.
+  At this point UI supports only 2-level categories!
+  ogg files are automatically converted to mp3 (see docs/INSTALL.txt)
+  
+  Command line interface tsabcli.sh supports:
+  cat-list
+  cat-add "CategoryName" [parentCategoryId]
+  cat-del CategoryId
+  trans-list
+  trans-add [path/to/]audio.[mp3|ogg] [path/to/]transcription.trs CategoryId [Title]
+  trans-del TranscriptionId
+  crawl path/to/dir
+  reindex

@@ -1,0 +1,9 @@
+1. Download apache 6.0.29 and unpack.
+2. Update build.properties to point to apache dir.
+3. Add following to apache conf/tomcat-users.xml:
+<role rolename="manager"/>
+<user username="tsabadmin" password="f09fCiG" roles="manager"/>
+4. Ensure that mp3splt is installed and available from PATH
+5. Ensure that ffmpeg is installed and available from PATH
+6. define environment variable TSAB.HOME and make sure it's visible to tomcat. Create directories "audio" and "lucene" at that dir.
+7. Install MySQL server at localhost. Create new user 'tsab' with password 'f09Flca'. Create new database named 'tsab' and grant permission to 'tsab' user. Credentials are configured in hibernate.cfg.xml

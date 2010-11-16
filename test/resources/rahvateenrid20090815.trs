@@ -1,0 +1,2260 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Trans SYSTEM "trans-14.dtd">
+<Trans scribe="Martin" audio_filename="rahvateenrid20090815" version="1" version_date="090914">
+<Topics>
+<Topic id="to1" desc="Eesti poliitika ja majanduse hetkeseis"/>
+</Topics>
+<Speakers>
+<Speaker id="spk1" name="Aarne Rannamäe" check="yes" type="male" dialect="native" accent="" scope="global"/>
+<Speaker id="spk2" name="Sulev Valner" check="yes" type="male" dialect="native" accent="" scope="global"/>
+<Speaker id="spk3" name="Neeme Korv" check="yes" type="male" dialect="native" accent="" scope="global"/>
+</Speakers>
+<Episode>
+<Section type="filler" startTime="0" endTime="10.6359300477">
+<Turn startTime="0" endTime="10.6359300477">
+<Sync time="0"/>
+
+<Event desc="jingle" type="noise" extent="instantaneous"/>
+
+</Turn>
+</Section>
+<Section type="report" startTime="10.6359300477" endTime="2426.462" topic="to1">
+<Turn speaker="spk1" mode="planned" fidelity="high" channel="studio" startTime="10.6359300477" endTime="48.346">
+<Sync time="10.753"/>
+
+<Event desc="musique" type="noise" extent="begin"/>
+Ilusat keskhommikut kõikidele Rahvateenrite kuulajatele! Täna, nagu
+<Sync time="15.548"/>
+väga harvad korrad meie saate üheteistkümneaastases ajaloos, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="18.868"/>
+on taas kord nii, et meie meeskond
+<Event desc="musique" type="noise" extent="end"/>
+ on jagunenud kahe geograafilise punkti vahel. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="23.387"/>
+Siin 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Vikerraadio Tallinna stuudios istuvad Postimehe arvamustoimetaja Neeme Korv, mina, saatejuht Aarne Rannamäe, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="30.889"/>
+ja meie Tartu stuudios on istet võtnud
+<Sync time="33.798"/>
+Võrumaa metsade mees, Sulev Valner. 
+<Sync time="35.895"/>
+Tervist kõigile! 
+<Event desc="conv" type="noise" extent="instantaneous"/>
+
+<Event desc="conv" type="noise" extent="instantaneous"/>
+
+<Sync time="36.972"/>
+On kuulda, et Sulev on ilusti Tartusse kohale jõudnud ja ma ei saa jätta kõigepealt, Sulev, sinu käest küsimata, et kuidas siis sealt Võrumaa kandist paistab Eestimaa elu? 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk2" mode="planned" fidelity="high" channel="studio" startTime="48.346" endTime="70.0865612083">
+<Sync time="48.346"/>
+Väga ilus. Väga ilus on seal. Võrumaal on
+<Sync time="51.257"/>
+on kindlasti praegu suvel looduslikult oluliselt 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kenam olla, kui kui isegi Tallinna kõige ilusamates kohtades, nii et... 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="60.598"/>
+Et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ei, mis ta ikka paistab. 
+<Sync time="63.643"/>
+Et eks, eks elu on muidugi väga individuaalselt paistab praegusel ajal inimestele, kuidas kellelgi läheb. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="70.0865612083" endTime="79.004">
+<Sync time="68.984"/>
+No kuna meil ei ole väga loodussaade vaid rohkem poliitika poole tüürime oma juttudega, siis ma küsin, Sulev, veel, et kuidas see majanduse pool sealt paistab? 
+<Event desc="bb" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk2" mode="planned" fidelity="high" channel="studio" startTime="79.004" endTime="120.947">
+<Sync time="79.004"/>
+Ma arvangi, et see on väga erinev, sõltuvalt, mis perel kuidas läheb. 
+<Sync time="84.29"/>
+Et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="87.441"/>
+aga ma, ma ütleks nii, hästi lihtsalt öeldes, et siin mitte pikka juttu teha, et mina ei näe ümberringi mingit 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="95.723"/>
+väga suurt depressiooni. 
+<Sync time="97.494"/>
+Mulle tundub, et Võrumaa inimestel 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="99.888"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ noh, nad on kogu aeg võib-olla natuke vähemaga hakkama saanud kui Tallinlased ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="106.602"/>
+ja võib-olla see 
+<Sync time="108.759"/>
+nii hirmsasti ei ole neid jalust rabanud isegi kui, kui mõningaid 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="113.942"/>
+linnainimesi, kellel võib-olla see vahepealne tõus on nüüd 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ noh, palju järsemalt ära kukkunud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="120.947" endTime="179.146">
+<Sync time="120.947"/>
+Nonii, hommikuprogrammi juht Mart Ummelas juba ütles, et meie tänane Rahvateenrite saade on mõnevõrra lühem, me teeme natukene 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="129.641"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ruumi veerand tunni jagu meie saate lõpus täna algavale 
+<Sync time="133.591"/>
+kergejõustiku maailmameistrivõistlustele ja sellepärast asume nii-öelda kohe asja juurde, võtame härjal sarvist. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="139.415"/>
+Sulev tegi selles mõttes väga ilusa sissejuhatuse, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="142.473"/>
+et eurobarome(), eurobaromeetri raport, mis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="146.474"/>
+äsja nii-öelda ilmavalgust nägi või, või tutvustamist leidis, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="150.268"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ on, on väga huvitav selline 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="153.865"/>
+nagu läbilõige või
+<Sync time="155.683"/>
+arvamuste baromeeter, mida, mida eestlased arvavad oma, oma elust ja ja kui ma nüüd sinu käest, Neeme, küsin, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="161.783"/>
+et kuidas, kuidas sa nagu võtsid selle, selle raporti vastu? Et minu meelest on seal päris niisuguseid
+<Event desc="niukse" type="pronounce" extent="previous"/>
+ üllatavaid, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="167.054"/>
+üllatavaid arve lugeda, et tervelt 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ seitsekümmend protsenti küsitletutest,
+<Sync time="171.856"/>
+kujutage ette, seitsekümmend protsenti, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="174.563"/>
+praeguses MASU ajal, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="177.126"/>
+on, on rahul oma eluga! 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="planned" fidelity="high" channel="studio" startTime="179.146" endTime="271.023">
+<Sync time="179.146"/>
+Jaa, täpsemalt öeldes isegi
+<Sync time="181.08"/>
+seitsekümmend kolm protsenti on rahul ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="183.844"/>
+ja 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kui Sulev ütles, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="187.113"/>
+et on, kuidas kellelgi on, siis paistab, et see üldine number on, on tõesti päris üllatav ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="192.566"/>
+ja kui meil räägitakse siin, et me oleme oma 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="195.535"/>
+majandusnäitajatelt jõudnud aastasse kaks tuhat viis, siis aastal kaks tuhat viis sügisel oli see näitaja seitsekümmend üks protsenti, nii et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ 
+<Sync time="203.353"/>
+inimesed on, on, on on suhteliselt rahul ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="207.182"/>
+ja, ja muidugi 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="209.846"/>
+kus üsnagi diametraalselt tuleb nüüd see erinevus välja meie lõunanaabritega, et 
+<Sync time="215.262"/>
+öeldakse, et me oleme küll nii-öelda 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="218.177"/>
+teatud maailma punktidest vaadates justkui, justkui 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="221.8"/>
+üks tervik, aga, aga tegelikult järjest enam siiski 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ tuuakse välja neid erisusi ja sellesama eurobaromeetri järgi tuleb ka see 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="229.868"/>
+rahulolu ikka, ikka päris selgelt välja, sest 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ 
+<Sync time="233.533"/>
+sest nii Lätis kui Leedus 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ on see protsent ikka oluliselt väiksem. Siin 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="240.357"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ siin viiekümne keskel vist oli see kuskil. 
+<Sync time="245.43"/>
+Ja, ja ka selles mõttes, kuidas inimesed vaatavad 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ tulevikku, 
+<Sync time="250.719"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ oli, oli Lätlas(), lätlased on siiski näiteks väga palju pessimistlikumad kui eestlased. 
+<Sync time="255.85"/>
+See tuleb, see tuleb sealt välja. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="257.21"/>
+Aga mis on muidugi huvitav
+<Sync time="258.756"/>
+jälle omakorda, on see, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ et samal ajal kui 
+<Sync time="262.146"/>
+arvatakse, et endal läheb suhteliselt hästi ja 
+<Event desc="Laugh" type="noise" extent="begin"/>
+enda eluga
+<Event desc="Laugh" type="noise" extent="end"/>
+ ollakse rahul, siis 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="266.155"/>
+siis riigi suhtes arvatakse täpselt vastupidi. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="271.023" endTime="272.567">
+<Sync time="271.023"/>
+Sa tahad, Sulev, midagi lisada?
+</Turn>
+<Turn speaker="spk2" mode="planned" fidelity="high" channel="studio" startTime="272.567" endTime="320.213">
+<Sync time="272.567"/>
+No, ma arvan, et siin nüüd ei tasu sellest arvust võib-olla 
+<Sync time="276.956"/>
+liiga vaimustusse ka minna, sest
+<Sync time="279.919"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ilmselt praegu on see aeg ka, kus 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ hästi, 
+<Sync time="284.888"/>
+hästi teravalt erineb 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="287.185"/>
+ütleme, inimeste, kes, kellel on veel tööd, 
+<Sync time="291.118"/>
+ja inimeste, kellel ei ole enam tööd, nende ettekujutus oma hakkamasaamisest. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="296.132"/>
+Ja ütleme, et kui me toome siia kõrvale selle, et 
+<Sync time="300.583"/>
+et kui näiteks tööpuudus on viisteist protsenti, 
+<Sync time="303.815"/>
+siis põhimõtteliselt ju see tähendab, et kaheksakümmend viis protsenti inimesi käib tööl. 
+<Sync time="308.649"/>
+Ehk siis nendest kaheksakümne viiest protsendist võib-olla seitsekümmend protsenti on veel päris rahul. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="314.701"/>
+Aga need viisteist protsenti on jälle väga raskes olukorras. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="320.213" endTime="366.131">
+<Sync time="320.213"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Nojah, eks nende arvude tõlgendamine on 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ on oma erialateadlaste töö ja ja tegelikult siin niisugune kõva dissonants ju välja paistab, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="328.775"/>
+kui seitsekümmend protsenti on, on rahul eluga, aga, aga samas arvab ainult kakskümmend viis protsenti, et kohe-kohe läheb paremaks. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="334.879"/>
+Nii et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ aga huvitav on ikkagi see, et, et me elame ju nii-öelda noh, infoväljas, meie kõik. Ka meie, ajakirjanikud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="341.539"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Kus päevast päeva meile räägitakse, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ elu on hull. 
+<Sync time="346.404"/>
+Ja ärge veel paremat, paremat lootke ja ühesõnaga, kogu see nii-öelda 
+<Sync time="351.407"/>
+väljastpoolt 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ tulevad mõjutegurid peaksid nagu, nagu noh, inimeste pessimismi suurendama, 
+<Sync time="357.436"/>
+aga ikkagi noh, see seitsekümmend protsenti üt(), arvab ja arvab nii-öelda reaalselt oma, oma olukorra põhjal, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="362.236"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kartmata siis järelikult kaotada oma tööd lähiajal. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" startTime="366.131" endTime="406.345">
+<Sync time="366.131"/>
+No tegelikult võib-olla siin polegi see, see, see nii suur, kuivõrd see, et tegelikult ju need majanduses 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="373.525"/>
+protsessid käivadki natukene pika vinnaga, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="377.014"/>
+et öeldakse ka see, et kui, kui tuleb praegu nüüd järsk majandustõus, siis ega siis see ei tähenda seda, et kohe hakkab leevenema tööpuudus. 
+<Sync time="384.853"/>
+Et see sõltub ikkagi sellest, et kuidas näiteks 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="387.769"/>
+näiteks uusi ettevõt(), ettevõtteid luuakse, sellepärast et kui nüüd vanad ettevõtted saavad 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="393.442"/>
+pisut 
+<Event desc="b" type="noise" extent="instantaneous"/>
+, pisut jalad alla, siis eks kõigepealt võetakse tööle need, kes näiteks on praegu kas ajutiselt pikemal puhkusel või 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="401.534"/>
+või siis, või siis tiirlevad kuskil seal 
+<Sync time="403.859"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ () asutuse ringis. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" startTime="406.345" endTime="442.793">
+<Sync time="406.345"/>
+No kindlasti peab seda ka arvestama, et praegu on ikkagi suvi. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="409.982"/>
+Ja räägitagu mida tahes sellest suveilmast, aga mina väidan küll, et viimane kuu aega on ikkagi päris kena ilm olnud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="418.941"/>
+Ja see nagu emotsionaalselt on üks taust 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="423.071"/>
+ja see ilm, mis tõenäoliselt meid 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ saadab kuskil oktoobris-novembris, on natuke teistsugune,
+<Sync time="429.629"/>
+siis hakkavad tulema küttearved, 
+<Sync time="431.942"/>
+mida suvel sellisel suurel kujul ei ole, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="435.085"/>
+ja siis paljude inimeste ettekujutus oma hakkamasaamisest võib kahjuks muutuda oluliselt pessimistlikumaks. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="442.793" endTime="509.487">
+<Sync time="442.793"/>
+No siin analüütikud on öelnud, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ mida vaesem on riik, seda suuremad on ka lootused. Kindlasti peab see paika, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="449.898"/>
+ma usun, et samas meie see suur majandusedu, mis meid siin aastate jooksul saatis ja tõus oli nii-öelda permanentne ja ja kogu aeg, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="458.331"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ elu läks paremaks, palgad, sissetulekud suurenesid, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="462.377"/>
+ja see, see ?okk, mis me üle elasime, et näed, enam ei tõusegi, 
+<Sync time="466.009"/>
+et hoopis halvemaks võib minna ja ja tööpuudus hakkas kasvama, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="469.205"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ see vajutas kindlasti inimeste suhtumisele oma pitseri, aga nüüd me oleme kuidagi nagu ilmselt harjunud sellega, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="475.053"/>
+selle olukorraga, ja me üha rohkem hakkame meelde tuletama, et, et noh, ei 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="479.237"/>
+ei olnud meil ju sellist 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ noh, 
+<Sync time="481.244"/>
+surmahirmu või, või niisugust
+<Sync time="484.036"/>
+fataalset meeleheidet ka nendel aastatel, kui me talongidega leiba ja võid ostsime,
+<Sync time="488.714"/>
+rääkimata, noh, Nõukogude ajast, eks ole. Et, et see
+<Sync time="491.415"/>
+see kohanemine ilmselt võtab natukene aega, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="493.738"/>
+ja nüüd on see kohanemine toimunud. Ja ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="496.792"/>
+ja tõesti, inimesed, kelle on töö, 
+<Sync time="498.991"/>
+on ka olemas ikkagi see optimism, et, et see töökoht säilib ja 
+<Sync time="503.131"/>
+ja tegelikult, kellel on töö, nagu Sulev ütles, ka ei ole, ei ole elu oluliselt halvemaks läinud. 
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="509.487" endTime="571.064">
+<Sync time="509.487"/>
+Jah, no majanduses on ju tegelikult nende emotsioonide tasakaal tegelikult päris suur, et kui siin 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="516.235"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ räägiti sellest, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ hiljuti Metsaülikoolis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Indrek Neivelt soovitas näiteks just Euro 
+<Sync time="523.401"/>
+eesmärgist loobuda, Raivo Vare tõi välja selle, et 
+<Sync time="526.908"/>
+et et see tooks kaasa ka mõninga teatud ahhaa-efekti majanduses, siis 
+<Sync time="531.88"/>
+siis mulle kohe meenus sellega, kui te lubate mul tsiteerida natukene kirjandust, siis, siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="537.089"/>
+David Lodge'i raamat, romaan "Väärt töö", kus 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="540.303"/>
+kirjandusteadlasest sai väärtpaberimaakler ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="543.353"/>
+ja 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ta siis võrdles seda nii, et 
+<Sync time="546.836"/>
+kui ühel puhul käib mäng kõrgete filosoofiliste panuste peale, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="550.964"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ siis ta vahetas selle teise mängu vastu, kus on kõrged rahalised panused 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="555.197"/>
+ja mõlemal juhul on see mäng, kus rahuldus saadakse pigem mängimisest kui võidust, sest absoluutseid võitjaid ei olegi 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ 
+<Sync time="560.887"/>
+ja see mäng ei lõpe eales. Ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="562.693"/>
+võib-olla tegelikult inimesed on natukene nagu harjunud ka selle mõttega, et, et turumajanduses see 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="568.115"/>
+see, see mä(), see mäng ikkagi kogu aeg käib. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="571.064" endTime="604.671">
+<Sync time="571.064"/>
+Jah, ilmselt küll, et ikkagi vahepeal nagu kaks-kolm aastat või neli aastat tagasi unustati ära, et, et kõik ei tõuse nii, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ 
+<Sync time="579.529"/>
+nii kõvasti alati ja lõputult, et noh, tuletame meelde, et kaks ja pool aastat tagasi valimiste põhiloosung oli ju, et Eesti viie Euroopa riigi, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="589.724"/>
+rikkama riigi hulka. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="591.446"/>
+Ja kui võtta kampaania algust siis on sellest umbes kolm aastat möödas, ehk siis kaksteist aastat jäänud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="597.304"/>
+Ehk et kuidas me täna sellesse loosungile vaatame, iseenesest ei ole ju ametlikult seda päevakorrast maha võetud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="604.671" endTime="611.205">
+<Sync time="604.671"/>
+Noh, jah, kuigi kohalikud valimised on tulemas, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Neeme hakkas ka selle 
+<Event desc="conv" type="noise" extent="begin"/>
+peale () naerma.
+<Event desc="conv" type="noise" extent="end"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="611.205" endTime="617.863">
+<Sync time="611.205"/>
+See kõlas kui, nagu mingi, mingi riiklik eesmärk, aga see on siiski ühe erakonna loosung. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="617.863" endTime="636.856">
+<Sync time="617.863"/>
+Jah, nii ta on, ja, ja vaatame, missuguste loosungitega tullakse välaj 
+<Sync time="621.778"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ nendel valimistel. Erakonnad on teatanud, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="625.759"/>
+et septembris läheb see tõeline valimiskampaania lahti, kaalul on tegelikult ju palju, kohalikel valimistel kindlasti 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ hoopis teised panused kui 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="634.102"/>
+kui äsja olnud Euroopa Parlamendi valimistel. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="636.856" endTime="689.807">
+<Sync time="636.856"/>
+Kampaania on tegelikult ju alanud, et ma sõitsin Võru poolt siia Tartusse sisse, nägin ilusat plakatit, "Ma armastan Tartut", vaatasin, et muidu keegi noh, ilusa plakati üles pannud, aga alt oli lugeda väiksemas kirjas - Reformierakond. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="651.28"/>
+Et see on ilmselgelt nüüd juba ju valimiste välireklaam, mis on alanud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="655.882"/>
+Ja noh, miks mitte, et see, see loosung võib-olla jälle viitab ka sellele, et, et val(), selles valimiskampaanias nüüd hakatakse selliseid 
+<Sync time="664.305"/>
+pehmeid väärtusi üles tõstma, armastus Tartu või ütleme üldse, armastus mingi piirkonna vastu ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="670.586"/>
+ja hoolimine ja kokku hoidmine ja... 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="673.303"/>
+Et kui eelmine kord põhiliselt käis üle pakkumine, et kes lubab suuremat pensioni, kes lubab suuremat palka, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="680.534"/>
+et siis nüüd pigem öeldakse, et ah ärme nüüd sellest materiaalsest nii palju räägi, räägime sellest, et kuidas 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="687.049"/>
+inimestel omavahel hea on, emotsioonidest. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="689.807" endTime="698.374">
+<Sync time="689.807"/>
+Tõsi küll, tuleb ära mainida, et eelmine kord, kui sa
+<Sync time="692.931"/>
+see, see sinu väljend, eelmine kord, suurelt, tähendab seda, et olid Riigikogu valimised
+<Sync time="696.722"/>
+
+<Event desc="conv" type="noise" extent="instantaneous"/>
+ mitte, mitte kohalikel valimistel?
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="698.374" endTime="703.727">
+<Sync time="698.374"/>
+Nagu ma, (), nagu ma aru sain, Sulev, et see erakonna nimi oli seal väiksemalt kirjutatud?
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="703.727" endTime="705.24">
+<Sync time="703.727"/>
+Tundus küll, jah. 
+<Event desc="Laugh" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="705.24" endTime="711.939">
+<Sync time="705.24"/>
+Ei no ma tahaks näha erakonda, kes ütleb, et ta ei armasta Tartut või Tallinnat või Kohtla-Järvet, eks ole. 
+<Event desc="Laugh" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="711.939" endTime="735.923">
+<Sync time="711.939"/>
+Nojah, ei ma mõtlen seda, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="714.17"/>
+et erakondade usaldusväärsus, mida näitab seesama eurobaromeetri 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="719.116"/>
+uuring ja muidugi ka 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ noh, 
+<Sync time="721.587"/>
+masendav ja ikka täiesti katastroofiline, et, et ma arvan, et isegi, isegi vist 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="728.007"/>
+ajakirjanduse usaldusväärsus nii madalal ei ole vist kunagi olnud,
+<Sync time="731.222"/>
+kui, kui, kui erakondade usaldusväärsus praegu. Mitte, et ma väga tahaksin neid võrrelda. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="735.923" endTime="795.773">
+<Sync time="735.923"/>
+Jah, võib arvata küll, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ paljude erakondade inimesed hakkavad 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ lähiajal tegelikult 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="743.4"/>
+noh, nende valimiste kontekstis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="746.177"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ noh, peitma seda erakonna nime ja 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ 
+<Sync time="749.42"/>
+liituvad valimisliitudega, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="752.054"/>
+noh, või siis vähemasti räägivad, et ärge seda erakonna nime nii väga vaadake, et vaadake meie, kes me tegelikult oleme, et, et me oleme ilma selleta ka toredad inimesed ja... 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="762.749"/>
+Ja, ja see võib-olla on isegi teatud pöördepunkt Eesti poliitika arengus, et kui 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="768.68"/>
+siiamaani nagu kogu aeg on räägitud, et kuidas 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="772.347"/>
+noh, erakonnad muutuvad aina tugevamaks ja tugevamaks ja iga järgmine valimine aina süvendab seda, et suured erakonnad võtavad rohkem ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="781.33"/>
+siis võimalik, et sel sügisel on toimumas selline väike pöördepunkt, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="787.433"/>
+et pigem nagu erakonnad natukese erakondlikkust taas, taandub ja, ja selline kodaniku- 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="793.619"/>
+ühiskond tuleb rohkem tagasi. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="795.773" endTime="856.182">
+<Sync time="795.773"/>
+Vaat, sellega seoses tegelikult ma tahaksin 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="799.096"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ühe sellise ääremärkuse teha, et 
+<Sync time="801.445"/>
+et olen siin viimastel nädalatel üsna usinasti lugenud maakonnalehti, kus muide ilmub tõesti
+<Sync time="807.265"/>
+väga-väga palju häid lugusid, nagu sa, Sulev, ise ka kindlasti tead seal, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="811.223"/>
+kindlasti kohalikku lehte loed. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="813.188"/>
+Et aga ma tahaksin 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ sellega seoses just oma kolleegidele just eriti, kes 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="818.912"/>
+arvamustega tegelevad, soovida julgust ja jõudu 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ nende 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="823.255"/>
+noh, põhimõtteliselt selliste 
+<Sync time="825.278"/>
+poliitilise toodangu tagasilükkamisel ja, ja 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="829.542"/>
+et millel ei ole võib-olla selle kohaliku 
+<Sync time="831.927"/>
+piirkonnaga tegelikult mitte mingit sellist otsest seost, et kahjuks neid, neid väga palju maakonnalehtedes ilmub ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="838.464"/>
+ja ja see on tegelikult selline 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="842.757"/>
+noh selle avalikkussuhete aparaadi toodang, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ ja
+<Sync time="846.667"/>
+tegelikult võiks, võiks just sedasama kodanikku rohkem julgustada ja rohkem ka nende maakonnalehtede 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ veergudele tuua, minu meelest. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="856.182" endTime="928.824">
+<Sync time="856.182"/>
+Ja mul on siin hoopis nagu kõrvalmõte selle asja kohta, et noh, poliitikute, rääkides nii-öelda elektroonilisest pressist, elektroonilise pressi esindajana, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="865.606"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ poliitikute kaamerate ja mikrofonide ette saamine ei ole kunagi tegelikult olnud probleem. Noh, on üksikud erandid, aga, aga põhimõtteliselt on nad alati valmis nii-öelda 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="875.763"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kutsele järgnema. Noh, nüüd on aeg käes, kus 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="879.632"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kus nad ronivad sisse ise ja vabatahtlikult ja väga aktiivselt nii uksest kui aknast, nii et selles mõttes näiteks meil siin Rahvusringhäälingus on kehtestatud niisugune neljakümne viie päevane karantiiniperiood, mis, mis kohe-kohe algab. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="891.109"/>
+Kus väga hoolikalt valitakse seda, seda seltskonda, keda, keda intervjueerida ja kõik, kõik põhjendamatud sellised 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="898.561"/>
+ülesastumised loodetavasti õnnestub, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ õnnestub ka ära hoida. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="902.753"/>
+Aga seda, et kaalul on rohkem kui elu, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="906.134"/>
+nendel valimistel, kaalul on, on võim 
+<Sync time="908.786"/>
+ja raha ja rikkus ja, ja kuulsus, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="911.291"/>
+siis on tähelepanuväärne, kuidas juba erakonnad on, on varakult teatanud, et, et väga paljud Riigikogu liikmed ja, ja peaaegu terve valitsuskabinet on 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="919.978"/>
+on nendel valimistel platsis, kuigi on, on selge, et kohalikesse omavalitsustesse nad, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ nad tööle ei lähe. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="925.731"/>
+Aga peibutuspartidena kõlbavad suurepäraselt. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="928.824" endTime="1003.204">
+<Sync time="928.824"/>
+No eks neil on ikka üsna elu küsimus käes ka, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ et nad kardavad, et see hinnang 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="935.932"/>
+noh, võib olla väga karm muidu, kui 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="938.04"/>
+kui nad nii-öelda kõiki võimalusi välja ei too, nii nagu 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="941.129"/>
+ütleme Europarlamendigi valimistele püüti ju ka ikkagi 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="945.377"/>
+ikkagi siduda kõiki võimalikke peibutusparte juurde, mida, mida vähegi andis. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="952.021"/>
+Et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+, et mingit pidi võib öelda, kui meenutada seda kahe ja poole aasta tagust Riigikogu valimist kevadel kaks tuhat seitse, mis oli hoopis teine aeg, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="961.912"/>
+kus tõesti räägiti hoopis teistest lubadustest ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="965.431"/>
+ja Eesti oli hoopis teises olukorras. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="968.09"/>
+Siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ 
+<Sync time="969.975"/>
+võiks öelda, et, et ega hästi ju ühiskond ei malda ära oodata järgmisi Riigikogu valimisi, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="975.174"/>
+et kui tänaseks on olukord muutunud, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="977.513"/>
+siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="978.972"/>
+ma arvan, et paljud inimesed vaistlikult ja poliit() ja poliitikud tunnevad seda, tahaksid praegu, noh, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ 
+<Sync time="985.397"/>
+teha nagu mingid vahevalimised. 
+<Sync time="987.544"/>
+Et anda mingi signaal, et kuidas nüüd edasi minna. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="990.921"/>
+Ja 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ja ja see ilmselt paneb, teeb poliitikud ka üksjagu 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="996.008"/>
+noh, närviliseks või murelikuks, või paneb pingutama, mis iseenesest ei ole paha, et las nad pingutavad, millal siis veel, kui mitte valimiste eel. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1003.204" endTime="1066.421">
+<Sync time="1003.204"/>
+Jah, aga 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ täiest(), täiesti nõus sinuga, Sulev, aga samas jätab ikka kuidagi väga niisuguse mageda mulje see, kui, kui Riigikogu liikmed, rääkimata juba vast- 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Euroopa Parlamendi liikmeks valitud inimesed 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1016.44"/>
+kandideerivad kohalike omavalitsuste valimisel, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1019.756"/>
+noh, ütleme kui see Riigikogu liikme, sellest võib, võib aru saada, et, et noh, ta on olnud, võib-olla paljud neist seotud 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ oma kohalike omavalitsuste tööga, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1028.504"/>
+aga, aga no ikkagi sellele vaatamata, kõlab kuidagi õõnsalt, et kohalik, kohalik elu läheb mulle ikka õudselt korda ja ja ma sellepärast kandideerin, et ma tahan 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1035.528"/>
+nagu oma nime ja ja taustaga nagu seda, seda paremaks muuta ja ja võistlust nagu, nagu pingelisemaks. Noh, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1041.449"/>
+kuigi on ju teada, et nad ei lähe sinna, aga, aga ütleme, kui me räägime juba Euroopa Parlamendi saadikutest, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1046.643"/>
+no siin Keskerakond näiteks on teatanud, et, et nad panevad mõlemad oma 
+<Sync time="1051.26"/>
+oma kandidaadid, või vabandust, mõlemad oma saadikud kandideerima kohalikel valimistel kaheksateistkümnendal oktoobril. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1057.281"/>
+Et siis, et, et see, see kõlab ikka juba, juba väga magedalt, et, et noh...
+<Sync time="1062.817"/>
+Ma ei tea, kuidas teie arvate?
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1066.421" endTime="1080.897">
+<Sync time="1066.421"/>
+On mage jah, aga eks see ongi nüüd suuresti ka meie kui ajakirjanduse ülesanne seda päevast päeva ilmselt valijale meelde tuletada, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1076.541"/>
+et ega te ei lase ju ennast ometigi sellest ära petta. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1080.897" endTime="1125.143">
+<Sync time="1080.897"/>
+No ja valija on tegelikult seda näidanud, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ega ta nüüd ikka ennast, ennast lõputult ära petta ei lase ja seesama 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1088.903"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ seesama, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ mida Sulev, sa nüüd välja tõid, see 
+<Event desc="bb" type="noise" extent="instantaneous"/>
+ võimalik 
+<Sync time="1095.016"/>
+nii-öelda kodanikuühiskonna uus 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1097.601"/>
+uus tulek, millest siin muide
+<Sync time="1099.529"/>
+ka päris paljud ju arvamusliidrid on kirjutanud, Enn Soosaar Postimehes, mulle meenub siin 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1104.173"/>
+just mõni aeg tagasi. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1105.943"/>
+Et eks see olegi ju ka märk sellest ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1108.777"/>
+ja ma ei tea, kas see 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1110.564"/>
+Siim Kallase pakutud 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1113.232"/>
+käitumiskoodeks võiks nagu
+<Sync time="1115.826"/>
+nagu, nagu parandada seda, sest seal vist 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ nii-öelda idee järgi üks punkt võiks olla selline, et, et ei kandideeri sellisel juhul, kui ise 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1123.414"/>
+seda tööd tegema ei hakka. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1125.143" endTime="1165.134">
+<Sync time="1125.143"/>
+No aga öelgu seda siis oma erakonnale kõigepealt. 
+<Sync time="1128.505"/>
+Et ju lõpuks 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ka selles Euroopa Parlamendi valimistel 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1133.696"/>
+ikkagi just Reformierakond oli üks, noh, Keskerakond võib-olla kõige markantsemalt, 
+<Sync time="1138.843"/>
+oma lausa juhi näol, eks ole, tegi seda,
+<Sync time="1142.776"/>
+seda, mida, mida ei peaks tegema. Et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1145.762"/>
+et veab nimekirja ja siis astub kõrvale, aga ega Reformierakond oli järgmine selline, kes 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1151.072"/>
+kasutas seal küll Urmas Paeti ja küll sedasama Siim Kallast 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1154.813"/>
+väga tugevalt kampaanias, samas väga täpselt teades, et kumbki neist Brüsselisse 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1159.934"/>
+noh, sellesse ametisse ei lähe. Või Siim Kallas jääb niikuinii Brüsselisse aga teise ametisse. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1165.134" endTime="1168.836">
+<Sync time="1165.134"/>
+Sul on seal Tartust juba andmed, et Siim Kallas jääbki ametisse?
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1168.836" endTime="1175.871">
+<Sync time="1168.836"/>
+
+<Event desc="Laugh" type="noise" extent="instantaneous"/>
+ Ei, ma mõtlen, et ta Europarlamendi kontekstis noh, oli selge, et ta ei lähe 
+<Event desc="conv" type="noise" extent="begin"/>
+Europarlamenti
+<Event desc="conv" type="noise" extent="end"/>
+ oma koha pealt. 
+<Event desc="conv" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1175.871" endTime="1227.048">
+<Sync time="1175.871"/>
+Et muidu mis puutub sellesse eetikasse ja moraali, siis tegelikult on erakondadel oma põhikirjad ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1181.987"/>
+ja kui neid lugeda, siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1184.538"/>
+noh, minu arvates on seal ka väga palju selliseid toredaid punkte, mida mina kahtlen küll, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1189.743"/>
+mõnedki erakonnaliikmed ja ka erakonnad ise tegelikult väga eriti järginud ei ole ja ja noh, 
+<Sync time="1196.668"/>
+nii nagu siin 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1198.804"/>
+mina olen alati seda mõelnud, et, et ka ajakirjanikel, kellel on näiteks oma eetikakoodeks olemas, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1204.262"/>
+et niipalju kui nad sellest kinni peavad ja ja pöörduvad oma põhiväärtuste juurde, nii
+<Sync time="1209.204"/>
+see väljendub ka selles, et kuidas ajakirjandusel tervikuna läheb, et... 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1213.063"/>
+et ma olen selle po(), sellesama erakondade põhikirjade 
+<Sync time="1216.728"/>
+küsimuses olen siin kunagi varem ka öelnud, et mina näiteks küll väga sügavalt kahtlen, kas Villu Reiljan saaks olla Rahvaliidu nimekirjas, kui nad ikkagi järgiksid seda oma, oma 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1225.075"/>
+oma põhikirja mõtet. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1227.048" endTime="1247.063">
+<Sync time="1227.048"/>
+No põhikiri jah, aga ütleme see käitumiskoodeks, mida Siim Kallas nüüd Käärikul Metsaülikoolis välja pakkus, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1233.386"/>
+noh, üsnagi üldsõnaliselt muidugi, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1235.765"/>
+kas see, kas see üks, üks koodeks, mis on tegelikult ju üks sõna paberil, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1240.453"/>
+noh, tähendab midagi inimese jaoks, kui ta, kui ta nii-öelda igapäevaselt tegutseb, kas see ajakirjanike jaoks näiteks tähendab midagi?
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1247.063" endTime="1261.635">
+<Sync time="1247.063"/>
+Ajakirjanike jaoks, ma arvan, et näiteks meie kolme jaoks tähendab. Ma võin küll käe südame peale panna, et mina ka igasuguseid 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1255.215"/>
+kahtlasest allikast tulevaid stipendiume vastu ei võta, aga 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1258.343"/>
+aga see, kas ta nagu laiemalt ühiskonna 
+<Event desc="conv" type="noise" extent="begin"/>
+jaoks (), seda ma ei tea.
+<Event desc="conv" type="noise" extent="end"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1261.635" endTime="1278.586">
+<Sync time="1261.635"/>
+() Ma korra segan vahele, sa ei võta neid sellepärast vastu, et sa ei pea seda õigeks.
+<Sync time="1266.397"/>
+Sa ei pea seda inimesena õigeks.
+<Sync time="1267.787"/>
+Sa, sa käitud eetiliselt ja, ja üritad nii-öelda alati tõde päevavalgele tuua, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1273.3"/>
+aga kas sa teed seda sellepärast, et see on sisse raiutud ajakirjanike koodeksisse? 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1278.586" endTime="1310.985">
+<Sync time="1278.586"/>
+No ma 
+<Event desc="Laugh" type="noise" extent="instantaneous"/>
+ arvan seda, et, et ma olen nii ilmselt inimesena natukene seda tüüpi. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1282.989"/>
+Ja ilmselt ka sellepärast, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ et noh, keskkond, kus ma olen õppinud, ma olen kirjutanud alla ju ka 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1289.437"/>
+kuulsale akadeemia ?urnalistikakoodeksile, mis 
+<Event desc="conv" type="noise" extent="instantaneous"/>
+ tähendab ka ajakirjanike solidaarsust ja kõike muud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1292.303"/>
+
+<Event desc="conv" type="noise" extent="instantaneous"/>
+ Aga 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1296.429"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ aga jah, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ et ma ei 
+<Sync time="1299.562"/>
+ma ei kujuta ette, kas see nüüd midagi, midagi aitaks, et, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1303.431"/>
+oluline on ikkagi see, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ et kui nad, noh, et, et
+<Sync time="1307.105"/>
+et nad nagu mõttes 
+<Sync time="1308.906"/>
+selle, sellega kaasa läheksid. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1310.985" endTime="1375.685">
+<Sync time="1310.985"/>
+No arvestades seda, kuidas on devalveerunud 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ selle väärtus, et mida poliitikud räägivad ja kui paljut sellest saab uskuda, siis 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1318.885"/>
+tõenäoliselt lihtsalt ühe koodeksi valmiskirjutamine neid nüüd väga ei veenaks. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1323.518"/>
+Aga noh, kui me võtame ajakirjanduskoodeksi ja ja selle ka mehhanismi, siis 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1329.561"/>
+seal mehhanismis on ikkagi üks selline asi juures, nagu pressinõukogu. 
+<Sync time="1333.198"/>
+Me võime küll nii või naa suhtuda, aga kui hästi see nüüd reguleerib või töötab, aga 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1338.777"/>
+aga on ikkagi olemas koht, kuhu kaevata, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1342.803"/>
+ja üldiselt ükski toimetus ei taha siiski saada hukka mõistetud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1347.228"/>
+Et see on nagu piisavalt, ma arvan, et ka meile kõigile ütleme ja meie kolleegidele, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1352.641"/>
+no see on piisavalt valus, kui su kolleegid ütlevad, et kuule, sa oled eksinud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1356.582"/>
+Et jah, see ei ole mingi, keegi ei lähe sellest kohtu alla ega, ega midagi ei juhtu, aga 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1361.816"/>
+noh, selles tähenduses, aga, aga see ei ole, ei ole meeldiv ja see aitab natuke 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1367.527"/>
+natuke, natuke nagu asja reguleerida, aga ma sellesse poliitikute koodeksisse jah, eriti 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1373.744"/>
+eriti suuri lootusi küll ei julgeks...
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1375.685" endTime="1454.105">
+<Sync time="1375.685"/>
+Sest poliitikud ei ütle, et teisele oma ametivennale seal kõrvalpingis, et, et sa oled eksinud, sest järgmisel hetkel võib ta ise eksida. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1382.831"/>
+Huvitav ka, kuidas see ajakirjaniku eetikakoodeksiga kokku käib, et, et kui Kallas tegi oma ettepaneku, et riigikogulastel võiks olla oma käitumiskoodeks, siis 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ siis
+<Sync time="1390.773"/>
+vist aina(), ainus poliitik või, või üks vähestest, kes, kes leidis tsiteerimist, oli Jaan Kundla. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1396.815"/>
+Et ajakirjanikud tormasid kohe tema juurde ja küsisid, mis tema arvab. Noh, tema arvas muidugi, et see idee on lapsik. 
+<Event desc="pf" type="noise" extent="instantaneous"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1403.217"/>
+No nii oli, aga kui me veel tuleme tagasi ainult korraks põgusalt majandusasjade juurde, siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ tulid sel nädalal arvud, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1410.87"/>
+et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Statistikaamet 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ teadis öelda, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ et teise kvartali majanduslangus on 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ on 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ 
+<Sync time="1419.657"/>
+numbrites kuusteist koma kuus protsenti, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1422.426"/>
+mis siis tähendab küll seda, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1424.516"/>
+et mitte, mitte kvartaliga ei langenud 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ majandus kuusteist koma kuus protsenti, vaid et, et võrdlusbaasiks oli ikkagi 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ eelmise aasta 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ teine kvartal. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1433.932"/>
+Ja sellega võrreldes on siis majandus langenud üle kuueteistkümne protsendi, et, et see on nüüd natukene, natuke midagi muud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1439.356"/>
+Aga jooksvalt 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ettevõtete majandustegevus on kahanenud teise kvartali jooksul kolm koma seitse protsenti, mis, mis tegelikult ütleb, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1447.059"/>
+et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ see on natukene leebem number ja ja annab nagu väikeseks optimismiks lisapõhjust. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1454.105" endTime="1529.524">
+<Sync time="1454.105"/>
+No vot karta on, et, et kuna see number ei olnud nii hull, 
+<Sync time="1458.114"/>
+siis see võib anda ka 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ põhjust mitte midagi tegemiseks. 
+<Sync time="1463.403"/>
+Seda on siin ka arvamustes kirjutatud, et 
+<Sync time="1466.834"/>
+et (), et mingit pidi oleks isegi hea olnud, kui see number oleks Lätist suurem. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1471.236"/>
+Sest siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ see ?okk oleks nagu suurem. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1474.288"/>
+Et praegu võib ikkagi jääda selline tunne, et aga äkki, äkki läheb ikka mööda, kui me nüüd 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1479.943"/>
+veel pea liiva alla paneme ja mõne kuu ootame, et siis äkki ei peagi midagi tegema. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1485.438"/>
+Et, et, et kui, kui sellel nagu mitte nii hullul numbril on see efekt, siis ta ei ole väga hea number.
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1492.229"/>
+Aga 
+<Event desc="b" type="noise" extent="instantaneous"/>
+, aga see, seda enam, et on niisugune
+<Event desc="niuke" type="pronounce" extent="previous"/>
+ valimiseelne aeg, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1496.759"/>
+et see nagu võib, noh, kuna valimiste eel nagunii ei taheta väga, väga eks ole, teha otsuseid, mis kellelegi haiget teevad, siis 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1504.988"/>
+siis pigem 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ võib kar(), arvata, et need otsused lükkuvad kuhugi oktoobri lõppu, kui 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1510.199"/>
+kui valimised läbi saavad ja siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ noh, 
+<Sync time="1513.144"/>
+see vahepealne aeg võib-olla 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1514.89"/>
+läheb natuke kaotsi. Selle tõttu 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1516.9"/>
+mul, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ mulle tundub küll, et, et mida rutem nüüd need kohalikud valimised tegelikult läbi saaksid
+<Sync time="1522.653"/>
+ja nii-öelda eest ära saaksid, seda parem. 
+<Sync time="1525.091"/>
+Et, et, et poliitikud ja kogu riik nagu saaks tegeleda noh, päris eluga. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1529.524" endTime="1533.225">
+<Sync time="1529.524"/>
+Seda rutem saaksid pensionärid oma liigsest rahast lahti, tahtsid sa, Sulev, öelda.
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1533.225" endTime="1535.08986486">
+<Sync time="1533.225"/>
+
+<Event desc="conv" type="noise" extent="begin"/>
+No võib ka seda öelda, jah.
+<Event desc="conv" type="noise" extent="end"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1535.08986486" endTime="1549.31">
+<Sync time="1534.757"/>
+Sest üha rohkem tegelikult räägitakse ju sellest, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ nagu ütles ka nüüd tänaseks juba poliitikast lahkunud Meelis Atonen, et, et pensionärid on nagu kivi kaelas. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1544.223"/>
+
+<Event desc="conv" type="noise" extent="instantaneous"/>
+ Sangpomm kaelas, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ jah, meie, meie eelarvel ja 
+<Event desc="conv" type="noise" extent="instantaneous"/>
+ ja ja...
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1549.31" endTime="1555.014">
+<Sync time="1549.31"/>
+
+<Event desc="conv" type="noise" extent="instantaneous"/>
+ Kas ta, kas ta nii väga lahkunud on, minu meelest on ta Reformierakonnast juhatuses ikka veel. 
+<Event desc="conv" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1555.014" endTime="1571.022">
+<Sync time="1555.014"/>
+Seda küll, aga me rääkisime, Sulev, praegu sangpommist 
+<Event desc="conv" type="noise" extent="begin"/>
+rohkem.
+<Event desc="conv" type="noise" extent="end"/>
+
+<Sync time="1557.859"/>
+Antud, antud kontekstis Atonen on, on rohkem ikkagi nagu selle sõnumi tooja, kes 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1562.446"/>
+kes 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1563.809"/>
+nii-öelda laseb märki välja paista ja ja ja toob selle sõnumi meieni, mis, mis tegelikult poliitikutes, poliitikutel mõtetes on. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1571.022" endTime="1643.786">
+<Sync time="1571.022"/>
+Muidugi selle kohta on mul üsna üks, üsna selge arvamus, et minu meelest see taoline 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1575.668"/>
+sildistamine iseenesest pole õige mis tahes põhjustel ta ka iganes ei tekkinud, et ma kujutan ette, et seal Reformierakonnas sees on ju tegelikult praegu 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1585.633"/>
+noh, üsna, üsna ärev aeg, sellepärast et see 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1589.837"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ütleme sellisest parempoolsest ni?iparteist muutumine selliseks 
+<Sync time="1595.706"/>
+massiparteiks ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1597.282"/>
+ja ma arvan, et seal on kindlasti 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ju sees üsna mitu tiiba, siin on neid märke päris palju olnud selles, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1603.263"/>
+selles osas, aga, aga seesama, sellesama jutu juurde tagasi tulles, et minu meelest 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kui 
+<Sync time="1608.589"/>
+poliitikud räägivad, siis ei ole mõtet neil,
+<Sync time="1611.579"/>
+mina annaks küll sellise soovituse, et ei ole mõtet sildistada ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ ja mingeid taolisi 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1616.665"/>
+väljaütlemisi teha, sest ma noh, ma olen ise seda tunnetanud, olles 
+<Event desc="Laugh" type="noise" extent="instantaneous"/>
+ arvamustoimetuses nagu 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1621.355"/>
+mingi usaldustelefoni töötaja terve selle nädala ja ja mul on iga päev tulnud paberil 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1627.115"/>
+kirju, 
+<Event desc="Laugh" type="noise" extent="begin"/>
+te ei kujuta ette,
+<Event desc="Laugh" type="noise" extent="end"/>
+ kui palju nende, sellesama ühe lause peale. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ 
+<Sync time="1631.691"/>
+Et pigem ikkagi rääkida, püüda rääkida nendest asjadest ikka sirgelt ja otse, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1637.57"/>
+ei ole need pensionärid nii rumalad, oskavad, oskavad arvutada ja oskavad ka oma riigile kaasa tunda, kui vaja. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1643.786" endTime="1668.395">
+<Sync time="1643.786"/>
+Jah, ma ütleks siiski, et võib-olla veel enne Meelis Atoneni võiks ära märkida Olari Taali intervjuu eelmises Maalehes, 
+<Sync time="1651.678"/>
+mis oli ka, väga avameelselt ütles, et ega selle, tema meelest nagu selle kallale peab minema. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1658.904"/>
+Et, et ei ole see Atonen päris esimene sõnumitooja, kuigi ta on esimene sõnumitooja jälle nii lähedalt sellele praegusele otsustajate ladvikule. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1668.395" endTime="1712.814">
+<Sync time="1668.395"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Jah, ma olen Neeme, sinuga nõus, et sildistamine on 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ paha asi, aga, aga samas 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1675.339"/>
+noh, tuletame kas või seda meelde, kuidas 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ viiesaja krooniga 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ja praegu juba vist tuhande krooniga nagu pensionäride hääli 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1683.283"/>
+on ostetud 
+<Event desc="b" type="noise" extent="instantaneous"/>
+, siin üks erakond on tegelenud ja ega, ega teisedki päris, päris puhtad ei ole. Noh, küll mitte nii, nii otse nii-öelda raha,
+<Sync time="1692.392"/>
+raha jagamisega. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1694.043"/>
+Et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1696.244"/>
+ju siis ikka poliitikud on, on uurinud seda asja. Erakondades töötavad staabid, kes teavad, et, et kuni kaheksateistkümnenda oktoobrini tuleb ikka sel teemal lõuad pidada. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1705.996"/>
+Ja, ja mida vähem sel teemal räägitakse, seda, seda parem, aga mis, mis toimub pärast, see on, see on hoopis iseasi. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1712.814" endTime="1819.577">
+<Sync time="1712.814"/>
+No see on nagu devalveerimisjutud, eks ole, et mis sa ikka räägid, et ühel heal päeval, kui see äkki toimub, siis, siis ta lihtsalt toimub. Et, et mida vähem rääkida, seda parem. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1721.491"/>
+No ehkki see on halb paralleel, sest ma arvan, et teda ei toimu. Ma tõesti usun, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ devalveerimist. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1727.361"/>
+Aga, aga pensionivähendusega jah, on...
+<Sync time="1730.803"/>
+Ma, ma arvan küll, et see on niisugune...
+<Sync time="1734.848"/>
+Noh, see jõud, mis on seni hoidnud neid pensione vähendamast ja see jõud, mis on pannud peaministrit nii umbes neli korda 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1741.432"/>
+avalikult jõuliselt kinnitama, et, et tema pensioneid vähendada ei taha, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1746.283"/>
+noh et see jõud ei ole niivõrd 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1748.836"/>
+tulenev sellest, et, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ et rääkida nagu võlast vanema põlvkonna ees või, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1754.741"/>
+või et kuidagi põlvkondade solidaarsusest või hakkamasaamisest, vaid 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1760.569"/>
+vaid see on selline puhas hirm, et, et, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1764.698"/>
+selline arvestuslik hirm, et, et liiga palju hääli võib äkki kaotsi minna. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1769.341"/>
+Ja see hirm muidugi pärast oktoobrit on vähemalt, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1773.581"/>
+no umbes noh, mingiks ajaks väiksem, kuigi 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1777.331"/>
+muidugi Riigikogu valimised kaks tuhat üksteist juba ilmselt parteidel on ka õrnalt kukla taga. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1783.186"/>
+Et ega nad ju juba sel sügisel ei saa ka jätta nagu mõtlemata selle peale. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1788.179"/>
+Aga teiselt poolt muidugi Andrus Ansip on nagu lubaduste kahvlis, et tal on 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1793.519"/>
+teiselt poolt jälle väga kindel lubadus, et aastaks kaks tuhat peab Eestis olema Euro. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1798.516"/>
+Ja kui kaks tuhat üksteist me läheme märtsis vastu Riigikogu valimistele, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1803.052"/>
+ja Eesti on ebaõnnestunud Euro saamisel, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1806.669"/>
+siis tõenäoliselt, nagu Neeme ütles, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1810.072"/>
+et Reformierakond on tõusnud ni?iparteist suureks massiparteiks, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1814.625"/>
+siis võiks ennustada, et siis võib temast saada jälle ni?ipartei. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1819.577" endTime="1835.772">
+<Sync time="1819.577"/>
+Jaa, aga noh, kas seda, 
+<Event desc="Laugh" type="noise" extent="instantaneous"/>
+ kuidas seda suudetakse alla neelata aga, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1823.677"/>
+aga minu meelest sa, Sulev, kirjutasid Päevalehes ühe päris 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1827.063"/>
+hea artikli selle pensionäride 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ja pensionite teemal, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1831.919"/>
+et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ seal oli 
+<Sync time="1834.161"/>
+
+<Event desc="bb" type="noise" extent="instantaneous"/>
+ ka just see välja toodud, et...
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1835.772" endTime="1838.962">
+<Sync time="1835.772"/>
+Ma loodan, et kõik kuulajad kuulsid, et Postimees kiidab praegu Päevalehte.
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1838.962" endTime="1844.51">
+<Sync time="1838.962"/>
+Nojaa, aga ma kiidan vajadusel ka Rahvusringhäälingut ja ma võin ka mõnda muud väljaannet kiita...
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1844.51" endTime="1846.981">
+<Sync time="1844.51"/>
+
+<Event desc="conv" type="noise" extent="begin"/>
+Jajah, see () väike remark oli praegu.
+<Event desc="conv" type="noise" extent="end"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1846.981" endTime="1891.061">
+<Sync time="1846.981"/>
+Et just nii. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ Nii see just oli. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1849.587"/>
+Jaa, aga et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ nende sissetulekud on väga erinevad ja see, see nende elatustase on, on ka pensionäride endi sees väga, väga erinev. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1858.674"/>
+Ja sellest ma olen saanud sel nädalal ikka väga selge pildi, kui, kui ma just tõin enne siin välja, et ma olen lugenud neid kirju ja ja rääkinud tõesti kümnete inimestega, kes on toimetusse helistanud ja nad täitsa ausalt räägivad kõik
+<Sync time="1871.042"/>
+noh, detailselt ära, nad on väga osavad kalkuleerijad, nad 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ peavad oma eelarvet paremini kui paljud noored inimesed, ma kujutan ette. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1878.478"/>
+Ja tõesti, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ kui 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ noh, neid kõiki
+<Sync time="1881.507"/>
+nüüd selgelt lüüa nüüd ütleme täpselt võrdselt ühe, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ühe, ühe vitsaga, siis see oleks nagu küll, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1888.508"/>
+küll ma arvan, üsnagi, üsnagi kuritegu mõne inimese suhtes. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1891.061" endTime="1921.2273448">
+<Sync time="1891.061"/>
+Jah, ja kui Sulev siin ütles, et kalkuleeritakse väga hoolega ja ja iga, iga hääl nagu, nagu läheb arvesse ja ja selle eest võideldakse, siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ äsjaste valimiste ehk Euroopa Parlamendi valimiste 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1903.463"/>
+kontekstis võib öelda, et et kaduma võib minna mitte, mitte üksikud hääled, vaid, vaid häälte mass. 
+<Sync time="1909.218"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Ja, ja siin Indrek Tarandile antud sada tuhat häält on ikka, on ikka niisugune hoiatuslipp õhus, et, et selle nimel tehakse praegu ikka vist väga palju tööd, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1919.557"/>
+et, et see tulemus oleks vähe teistsugune. 
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="1921.2273448" endTime="1923.517">
+<Sync time="1921.276"/>
+Et armastus oleks esiplaanil ja erakonna nimi väike. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="1923.517" endTime="1973.906">
+<Sync time="1923.517"/>
+
+<Event desc="Laugh" type="noise" extent="begin"/>
+Jaa, isegi vaadates näiteks
+<Event desc="Laugh" type="noise" extent="end"/>
+ seda, kuidas 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1926.369"/>
+kuidas majandusolukorda hinnatakse, kuidas 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1929.798"/>
+eri parteidesse kuuluvad poliitikud täiesti erinevaid hinnanguid annavad ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1934.717"/>
+ja isegi, isegi nii-öelda 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1936.279"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ noh, meist mittesõltuvad majandus, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="1939.965"/>
+majandusolukord ka ütleme siin Euroopa tasandil ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1943.379"/>
+ja ma(), maailma mastaabis, rakendatakse kohalike valimiste vankri ette. See on, see on väga tähendusväärne, no võtame siin kas või ainult kaks näidet. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1951.691"/>
+Rahandus, rahandusminister Ligi 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ nii-öelda 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1955.292"/>
+mõõdukas pessimism ja ja ja kaitseminister Aaviksoo selline, ma ütleksin lausa hurraa-optimism. Et, et no mehed, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1962.145"/>
+sügisel on jalad põhjas, et pole enam karta midagi ja iga pere saab juba sügisel tunda, et, et kõik läheb paremuse poole. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1968.355"/>
+
+<Event desc="conv" type="noise" extent="begin"/>
+Kuigi, kuigi see nüüd,
+<Event desc="conv" type="noise" extent="end"/>
+ kuigi see on, see on ülimalt, ülimalt 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kahtlane. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="1973.906" endTime="2033.299">
+<Sync time="1973.906"/>
+Aga mis selle pensionite puut(), kohta puutub, siis ma tahaks nagu täpsustuseks küll öelda seda kindlasti, et minu meelest on väga hea, et Andrus Ansip on kindlalt öelnud, et pensionid ei lange ja ta 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1985.055"/>
+ja seda, et seda joont vähemalt seni, ütleme nüüd selle 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1988.757"/>
+kärpimise, noh võib öelda juba aasta praktiliselt on ikka juba kärbitud kogu aeg, 
+<Sync time="1993.514"/>
+mitmes erinevas voorus, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="1995.223"/>
+ja et seni vähemalt pensionikärbet ei ole toimunud. Noh, see tõus oli küll kevadel väiksem kui ta algselt oleks 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2002.984"/>
+nagu lubatud olnud, aga, aga see oli ilmselt üsna arusaadav. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2007.588"/>
+Aga et, et minu meelest on hea, et, et seda on suudetud pidada, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2012.085"/>
+et see on ka, et, et kui see oleks olnud esimene, mille kallale minnakse, või selle kallale oleks väga kergekäeliselt mindud, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2019.057"/>
+siis oleks meil juba pensionid vähendatud, see raha oleks ikkagi ära kulutatud 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2023.307"/>
+ja nii-öelda mõlemad, midagi ma arvan ei oleks sellest head olnud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2028.151"/>
+Et, et oleks juba jõutud pensione vähendada ja ikka oleks riigil raha vähe. 
+<Event desc="bb" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="2033.299" endTime="2061.578">
+<Sync time="2033.299"/>
+Ei no see niisugune 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ erakond, kes julgeks nii-öelda 
+<Sync time="2036.77"/>
+julgelt välja öelda ja ja nii-öelda valimisprogrammi ette rakendada selle, selle mõtte, et, et pensionite 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2042.828"/>
+kärpimine, või vähemasti tõusu peatamine on, on absoluutselt 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="2048.703"/>
+välistamatu, et see, see, seda peab tegema ja teisit(), 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="2052.192"/>
+vastasel juhul tabab meid, meid krahh ja häving, kogu, kogu meie riiki ja, ja majandust, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2056.603"/>
+siis ma usun, et on, on kindlasti suur hulk neid valijaid, kes, kes hindavad seda ausust. 
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="2061.578" endTime="2074.729">
+<Sync time="2061.578"/>
+No Maaleht ju küsis erakondade käest 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ ja seal vist oli, Sulev võib-olla oskab täpsemalt meenutada, kui ma õigesti mee(), mäletan, siis 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2071.128"/>
+enamik ütles seal, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+ et ei ole nõus.
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="2074.729" endTime="2081.988">
+<Sync time="2074.729"/>
+Ei muidugi, mitte mingil juhul. 
+<Sync time="2077.076"/>
+Et seal paar tükki olid nagu ütleme siis kõhklevad, nagu võis aru saada sellest.
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="2081.988" endTime="2085.880">
+<Sync time="2081.988"/>
+Ja mõnel puudus ka seisukoht. 
+<Sync time="2083.804"/>
+Ühel puudus seisukoht. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Event desc="pf" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="2085.880" endTime="2184.154">
+<Sync time="2085.880"/>
+Ei, aga ma arvan, et see ei saagi olla küsimus nagu 
+<Event desc="b" type="noise" extent="instantaneous"/>
+, küsimus iseenesest, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2091.597"/>
+et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ küsimus pole ju selles, et milline partei armastab pensionäre või ei armasta või või äkki keegi vihkab või äkki keegi tahabki neilt seda pensionit ära võtta. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2101.109"/>
+Et küsimus on ikkagi ju puhtalt 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2103.995"/>
+ütleme selline matemaatiline, et kui Eesti riigil on 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2108.457"/>
+on ikkagi praegune see kogutoodang, eks ole, värskelt ju võrreldi, et see, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2114.495"/>
+et me ei peagi võrdlema nii väga eelmise aastaga vaid võrdlusandmed parajad, millega võrrelda, aasta kaks tuhat viis, et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2121.529"/>
+et siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+, siis lihtsalt kui, kui raha on niipalju saamata, siis tuleb ju mingeid valikuid teha, et noh, see on natuke seesama, et kui 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2130.314"/>
+kui peres näiteks 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ üks vanem jääb tööta, siis 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2134.267"/>
+siis tuleb ikkagi, või, või ütleme, ühe vanema, noh näiteks 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2139.847"/>
+tööd kärbitakse umbes viiskümmend protsenti. Ma arvan, et riigi olukorda võiks võrrelda umbes sellise perekonnaga, kus seni käisid kaks vanemat tööl ja said täispalka, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2148.691"/>
+ja nüüd ühel vanemal on näiteks viiskümmend protsenti palka kärbitud. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2152.452"/>
+Et siis umbes sellise pere hakkamasaamise dilemmad on praegu Eesti riigi ees. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2156.913"/>
+Sest noh, umbes niipalju lihtsalt on seda tulu vähem. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2160.163"/>
+Ja sel juhul küsimus, et kas on kuskil 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2163.446"/>
+noh, ma ei tea, missugused kulud, siis võimalik kokku hoida ja noh, seal 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2169.017"/>
+sealt nagu need valikud tulevad. Mitte see, mitte küsimus pole selles, et kui praegu korraldada noh, eriti veel valimiste eel, aga noh üldse küsimus, et, et kas te armastate 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2178.795"/>
+noh, Tartut või pensionäre või, või, või keda veel, eks ole, kas te armastate lapsi...
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="2184.154" endTime="2186.388">
+<Sync time="2184.154"/>
+Kumba te rohkem armastate, Tartut või pensionäre?
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="2186.388" endTime="2198.358">
+<Sync time="2186.388"/>
+Jah, et siis kõik hea meelega annaks raha nii Tartule, lastele, pensionäridele ja veel millelegi. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2192.633"/>
+Lemmikloomadele kas või. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2194.38"/>
+Aga lihtsalt küsimus on, et kas seda raha on nii palju. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="2198.358" endTime="2228.814">
+<Sync time="2198.358"/>
+Head kolleegid, me oleme nüüd kolmkümmend viis minutit rääkinud leivast.
+<Sync time="2201.775"/>
+Nüüd meie saate sujuvamaks lõpetuseks ja üleminekuks 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Berliini, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2207.027"/>
+kergejõustiku MM-ile, räägime natuke tsirkusest ka. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2210.447"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Tsirkuse all pean ma silmas äsja olnud suurt vutilahingut Eesti ja Brasiilia 
+<Sync time="2216.026"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ meeskonna vahel, parima, parimas koosseisus. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2218.874"/>
+Eesti küll mitte. Aga ma tean, et Neeme on, on tõsine vutifänn, kes ei jäta ühtegi 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2223.454"/>
+rahvuskoondise mängu staadionil vaatamata. Siis ainult Eestis olevatel staadionitel, nii jah?
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="2228.814" endTime="2241.331">
+<Sync time="2228.814"/>
+No põhimõtteliselt küll, kuigi jah, viimastel aastatel ma olen ka 
+<Sync time="2232.67"/>
+koondisega mõned mängud 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2235.591"/>
+välismaal kaasas käinud, ehk siis Londonis () näiteks ja () Belgias. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="2241.331" endTime="2268.578">
+<Sync time="2241.331"/>
+No ma pean kohe ära ütlema, et jalgpall ei ole see 
+<Sync time="2245.334"/>
+asi, mis, mis mind nagu, () minu kehatemperatuuri või, või vererõhku tõstaks, nii et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2250.28"/>
+mulle, mind jätab see koreograafia seal muru peal täiesti külmaks. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2254.142"/>
+Sest kui väravaid ikka ei lööda ja ma pean üheksakümmend minutit oma elust raiskama 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2258.956"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ meeste ilusa, tõsi küll, koreograafia vaatamisel, siis meenutab see mulle rohkem nagu, nagu iluvõimlemist, mis 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2265.008"/>
+mis, mille hindamiskriteeriumid võiksid olla hoopis teistsugused, kui, kui väravad. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="2268.578" endTime="2317.101">
+<Sync time="2268.578"/>
+No muidugi mis puutub sellesse,
+<Sync time="2271.03"/>
+sellesse sel nädalal olnud kuulsasse Brasiilia mängu, mida on tituleeritud ju ka kui 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2276.396"/>
+sajandi mat?i ja ja mõnes mõttes ta seda ka kindlasti oli, 
+<Sync time="2280.039"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kuigi tema nii-öelda sportlik tähendus on, on, oli paljuski väiksem, kui näiteks 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ mingisugustel valikmängudel, võib-olla isegi näiteks Andorra või Lichtensteini vastu. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2291.388"/>
+Aga 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ sellel, sellel mängul oli siiski no ilmselge 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ nii-öelda Eesti 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="2299.048"/>
+maine ja Eesti, Eesti riigi tutvustamise mõju ja, ja seda on 
+<Sync time="2303.958"/>
+noh, ükskõik kellel väga-väga raske eitada, sellepärast et 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2307.565"/>
+et see mäng ikkagi läks 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2309.309"/>
+väga-väga paljudesse riikidesse ja noh, Brasiilias, ma olen täiesti veendunud, et seda vaatas iga põlvepikkune poisike. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2315.754"/>
+
+<Event desc="conv" type="noise" extent="begin"/>
+Kes () tänapäeval teab... 
+<Event desc="conv" type="noise" extent="end"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="2317.101" endTime="2332.999">
+<Sync time="2317.101"/>
+Ühte, jah Brasiilias 
+<Event desc="conv" type="noise" extent="instantaneous"/>
+ jah, aga () ühte üleilmset lehte ma lugesin, ma olin siin vahepeal Eestit ära ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2323.816"/>
+ja see, see leht rääkis küll sellest rohkem, kuidas Kaka Tallinna linnas ära eksis
+<Sync time="2328.056"/>
+ja ja mängust nagu suurt midagi, et ees(), üks, üks fakt oli veel, et mäng oli suhteliselt toores. 
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="2332.999" endTime="2385.937">
+<Sync time="2332.999"/>
+No 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ mängust ma arvan, et 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kuulajad ei ole ka võib-olla niivõrd, niivõrd spordihuvilised, et nad 
+<Event desc="b" type="noise" extent="instantaneous"/>
+
+<Sync time="2340.333"/>
+võiksid kuulata siin ühe mingisuguse 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2342.911"/>
+jalgpallisõbra analüüsi, aga 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2345.027"/>
+aga 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ selge on see, et seesama Kaka nii-öelda 
+<Sync time="2348.907"/>
+kõndimine siin Tallinna linnas oli tegelikult täpselt samamoodi kujunes selliseks 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2353.869"/>
+või mängiti välja kui selline, selline 
+<Sync time="2356.166"/>
+mainelõks, et kuigi siin oli meil selle,
+<Sync time="2358.818"/>
+jalgpallipiletiga oli siin üks, üks 
+<Event desc="b" type="noise" extent="instantaneous"/>
+, üks segadus ja ma arvan, et kokkuvõttes 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ tegelikult 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ noh, päris 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2366.398"/>
+päris hästi kokkuvõttes see nagu asi välja ei kukkunud, aga 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2369.676"/>
+aga ma arvan, et see, see maineüritus 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ õnnestus meil päris hästi ja 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2373.814"/>
+ja loomulikult võivad inimesed olla kõik rõõmsad, et selle peale ei kulunud, 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+<Sync time="2379.1"/>
+isegi kui see miinus tuleb seal 
+<Sync time="2380.748"/>
+Jalgpalliliidule kümme miljonit, 
+<Sync time="2382.586"/>
+siis ei kulunud sentigi maksumaksja raha. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="2385.937" endTime="2400.774">
+<Sync time="2385.937"/>
+Nii, aga täna algab siis Berliinis kergejõustiku MM, 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ kiireks lõppmänguks 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ sõna, sõna teile, teile mõlemale, et kui... 
+<Sync time="2394.888"/>
+
+<Event desc="b" type="noise" extent="instantaneous"/>
+ Missugune peab olema see, see tulemus, et, et Eesti võiks rahule jääda?
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="2400.774" endTime="2405.055">
+<Sync time="2400.774"/>
+No ega me ju alla Kanteri kulla nagu ei lepi. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="2405.055" endTime="2406.873">
+<Sync time="2405.055"/>
+No Kanteril on kuld juba kaelas. 
+</Turn>
+<Turn speaker="spk2" mode="spontaneous" fidelity="high" channel="studio" startTime="2406.873" endTime="2412.514">
+<Sync time="2406.873"/>
+No jaa, aga 
+<Event desc="Laugh" type="noise" extent="begin"/>
+saab näha,
+<Event desc="Laugh" type="noise" extent="end"/>
+ kas ikka tegelikult läheb, et 
+<Sync time="2410.227"/>
+et kerge ei saa tal olema. 
+<Event desc="r" type="noise" extent="instantaneous"/>
+
+</Turn>
+<Turn speaker="spk3" mode="spontaneous" fidelity="high" channel="studio" startTime="2412.514" endTime="2418.212">
+<Sync time="2412.514"/>
+No siin on viimastel aegadel kergejõustikust tulnud päris ilusaid üllatusi, nii et äkki tuleb seekord ka. 
+</Turn>
+<Turn speaker="spk1" mode="spontaneous" fidelity="high" channel="studio" startTime="2418.212" endTime="2426.462">
+<Sync time="2418.212"/>
+Nii, aga ärme nüüd enam rohkem 
+<Event desc="b" type="noise" extent="instantaneous"/>
+ sooja õhku välja puhu, anname sõna professionaalidele ja Tiit Karuks ja...
+</Turn>
+</Section>
+</Episode>
+</Trans>

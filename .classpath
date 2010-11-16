@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="test/java"/>
+	<classpathentry kind="src" path="test/resources"/>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="lib" path="lib-ext/servlet-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://tomcat.apache.org/tomcat-5.5-doc/servletapi/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/freemarker.jar" sourcepath="lib-src/freemarker-src.zip"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/hibernate3.jar" sourcepath="lib-src/hibernate-core-src.zip"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/lucene-core-3.0.2.jar" sourcepath="lib-src/lucene-src.zip"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/slf4j-ext-1.6.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/lucene-queries-3.0.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/tsab/lib-src/lucene-queries-3.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
