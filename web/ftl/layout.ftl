@@ -133,7 +133,6 @@ Event.observe(window, 'load', function() {
     }
 });
 </script>
-<p>&nbsp;</p><!-- beauty-space -->
 </body>
 </html>
 </#macro>
