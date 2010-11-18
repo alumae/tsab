@@ -297,7 +297,7 @@ public class TsabServlet extends FreemarkerServlet {
       @Override
       public void setSetting(String key, String value) throws TemplateException {
         if (key!=null && PARAM_TSAB_LANGUAGE.equalsIgnoreCase(key)) {
-          initLanguage(value);
+          initLanguage(this, value);
         } else {
           super.setSetting(key, value);
         }
@@ -307,13 +307,14 @@ public class TsabServlet extends FreemarkerServlet {
     };
   }
 
-  private void initLanguage(String value) {
+  private void initLanguage(Configuration cfg, String value) {
     Locale locale = Locale.ENGLISH;
     if (value!=null && value.length()>0) {
       log.info("Configuring servlet instance for language code: "+value);
       locale = new Locale(value);
     }
-    bundle = ResourceBundle.getBundle("messages", locale);    
+    bundle = ResourceBundle.getBundle("messages", locale);
+    cfg.setLocale(locale);
   }
 
 }

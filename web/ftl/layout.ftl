@@ -52,6 +52,14 @@
 <body>
 
 <div id="main-container">
+	<div id="page_navi" class="wrap">
+	  <div class="col-right">
+	    <ul id="nav">
+	      <li class="page_item"><a href="about">${loc.about}</a>
+	      <li class="page_item last"><a href="mailto:${loc.email_address}">${loc.email}</a>
+	    </ul>
+	  </div>
+	</div>
 
 	<div id="heading">
 	<a href="index"><img src="../img/tsab-header.gif" alt="" border="0"/></a>
