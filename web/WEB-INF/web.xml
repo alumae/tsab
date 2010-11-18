@@ -17,7 +17,7 @@
 
 		<init-param>
 			<param-name>TsabLanguage</param-name>
-			<param-value>en</param-value>
+			<param-value>et</param-value>
 		</init-param>
 
 		<!-- FreemarkerServlet settings: -->
