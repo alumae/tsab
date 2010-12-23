@@ -1,12 +1,15 @@
 package ee.ioc.phon.tsab.dao;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 import org.apache.lucene.document.Document;
@@ -27,6 +30,7 @@ import ee.ioc.phon.tsab.common.TsabException;
 import ee.ioc.phon.tsab.domain.Category;
 import ee.ioc.phon.tsab.domain.Transcription;
 import ee.ioc.phon.tsab.domain.TranscriptionFragment;
+import ee.ioc.phon.tsab.domain.TranscriptionTopic;
 
 public class TsabDao {
 
@@ -112,6 +116,28 @@ public class TsabDao {
 
   }
 
+  public List<TranscriptionTopic> getTranscriptionTopics(Transcription current) throws TsabException {
+
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+      try {
+        return sess.createCriteria(TranscriptionTopic.class).add(Restrictions.eq("transcription", current))
+            .addOrder(Order.asc("time")).list();
+      } finally {
+        tx.commit();
+      }
+    } catch (Exception e) {
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to find transcription topics for transcription '" + current + "'",
+            e);
+      }
+    }
+
+  }
+
   public void deleteFragment(TranscriptionFragment speechLine) throws TsabException {
     Session sess = HibernateUtil.getSessionFactory().openSession();
     Transaction tx = sess.beginTransaction();
@@ -146,7 +172,8 @@ public class TsabDao {
     }
   }
 
-  public Transcription addTranscription(Transcription newt, List<TranscriptionFragment> fragments) throws TsabException {
+  public Transcription addTranscription(Transcription newt, List<TranscriptionFragment> fragments,
+      Hashtable<String, String> topics) throws TsabException {
     Session sess = HibernateUtil.getSessionFactory().openSession();
     Transaction tx = sess.beginTransaction();
     try {
@@ -155,12 +182,39 @@ public class TsabDao {
 
       sess.saveOrUpdate(newt.getCategory());
 
+      Map<String, TranscriptionTopic> topicMap = new HashMap<String, TranscriptionTopic>();
+
+      Iterator<Entry<String, String>> topicIter = topics.entrySet().iterator();
+      while (topicIter.hasNext()) {
+        Map.Entry<java.lang.String, java.lang.String> t = (Map.Entry<java.lang.String, java.lang.String>) topicIter
+            .next();
+        String topicId = t.getKey();
+        String topicDesc = t.getValue();
+        TranscriptionTopic tt = new TranscriptionTopic();
+        tt.setTopicId(topicId);
+        tt.setTopicName(topicDesc);
+        tt.setTranscription(newt);
+        sess.save(tt);
+        topicMap.put(topicId, tt);
+      }
+
       Iterator<TranscriptionFragment> fit = fragments.iterator();
       while (fit.hasNext()) {
         TranscriptionFragment transcriptionFragment = (TranscriptionFragment) fit.next();
         transcriptionFragment.setTranscription(newt);
+        
+        TranscriptionTopic topic = topicMap.get(transcriptionFragment.getTransientTopicId());
+        if (topic!=null && topic.getTime()==null) {
+          topic.setTime(transcriptionFragment.getTime());
+          sess.update(topic);
+        }
+        
+        transcriptionFragment.setTopic(topic);
+        
         sess.save(transcriptionFragment);
       }
+
+
       tx.commit();
       return newt;
     } catch (Exception e) {
@@ -177,14 +231,14 @@ public class TsabDao {
     Session sess = HibernateUtil.getSessionFactory().openSession();
     Transaction tx = sess.beginTransaction();
     try {
-      
+
       Iterator<TranscriptionFragment> fit = fragments.iterator();
       while (fit.hasNext()) {
         TranscriptionFragment transcriptionFragment = (TranscriptionFragment) fit.next();
         transcriptionFragment.setTranscription(newt);
         sess.save(transcriptionFragment);
       }
-      
+
       tx.commit();
       return newt;
     } catch (Exception e) {
@@ -197,7 +251,6 @@ public class TsabDao {
     }
   }
 
-  
   public List<String> getTranscriptionLines(Transcription trans) throws TsabException {
     Session sess = HibernateUtil.getSessionFactory().openSession();
     Transaction tx = sess.beginTransaction();
@@ -250,15 +303,15 @@ public class TsabDao {
       if (trans == null) {
         throw new TsabException("Unable to delete Transcription, does not exist! id:)" + id);
       }
-      
+
       List<TranscriptionFragment> frags = (List<TranscriptionFragment>) sess
-      .createCriteria(TranscriptionFragment.class).add(Restrictions.eq("transcription", trans))
-      .addOrder(Order.asc("time")).list();
-      
+          .createCriteria(TranscriptionFragment.class).add(Restrictions.eq("transcription", trans))
+          .addOrder(Order.asc("time")).list();
+
       Iterator<TranscriptionFragment> fragit = frags.iterator();
-      
+
       //log.debug("Removing fragments. Count:"+frags.size());
-      
+
       while (fragit.hasNext()) {
         TranscriptionFragment f = (TranscriptionFragment) fragit.next();
         sess.delete(f);
@@ -381,82 +434,83 @@ public class TsabDao {
 
     Session sess = null;
     try {
-    sess = HibernateUtil.getSessionFactory().openSession();
+      sess = HibernateUtil.getSessionFactory().openSession();
 
-    for (int i = 0; i < hits.totalHits; i++) {
+      for (int i = 0; i < hits.totalHits; i++) {
 
-      Document doc;
-      try {
-        doc = s.doc(hits.scoreDocs[i].doc);
-      } catch (CorruptIndexException e) {
-        throw new TsabException("Corrupt Exception, unable to search!", e);
-      } catch (IOException e) {
-        throw new TsabException("Failed to search!", e);
-      }
+        Document doc;
+        try {
+          doc = s.doc(hits.scoreDocs[i].doc);
+        } catch (CorruptIndexException e) {
+          throw new TsabException("Corrupt Exception, unable to search!", e);
+        } catch (IOException e) {
+          throw new TsabException("Failed to search!", e);
+        }
 
-      String content = doc.get("contents");
-      String title = doc.get("title");
-      String category = doc.get("category");
-      String uid = doc.get("uid");
+        String content = doc.get("contents");
+        String title = doc.get("title");
+        String category = doc.get("category");
+        String uid = doc.get("uid");
 
-      log.debug("Query hit title:" + title);
+        log.debug("Query hit title:" + title);
 
-      String[] lines = content.split("\n");
-      String results = "";
-      int j = 0;
-      int entrylines = 0;
+        String[] lines = content.split("\n");
+        String results = "";
+        int j = 0;
+        int entrylines = 0;
 
-      //log.debug("Content: "+content);
+        //log.debug("Content: "+content);
 
-      //log.debug("Total number of lines:"+lines.length);
-      
-      for (String line : lines) {
+        //log.debug("Total number of lines:"+lines.length);
 
-        j++;
+        for (String line : lines) {
 
-        String[] words = line.split(" ");
+          j++;
 
-        boolean include = false;
+          String[] words = line.split(" ");
 
-        for (String word : words) {
-          for (String qq : qs) {
-            if (word.toLowerCase().startsWith(qq.toLowerCase())) {
-              include = true;
-              break;
+          boolean include = false;
+
+          for (String word : words) {
+            for (String qq : qs) {
+              if (word.toLowerCase().startsWith(qq.toLowerCase())) {
+                include = true;
+                break;
+              }
             }
           }
+
+          if (include) {
+            Long tid = new Long(uid);
+
+            //log.debug("Search match found for row "+(j-1));
+
+            List<TranscriptionFragment> fraglist = sess.createCriteria(TranscriptionFragment.class)
+                .add(Restrictions.eq("transcription.id", tid)).addOrder(Order.asc("time")).list();
+            TranscriptionFragment frag = fraglist.get(j - 1);
+
+            results += "<a href='javascript:donothing();' id='playbutton_" + playbuttons + "' onclick='playOneLine("
+                + playbuttons + "," + uid + ", " + frag.getTime() + ")'>CONTROL_PLAY</a> ..."
+                + Tools.toQueryResult(queryString, line) + "...<br/>";
+            playbuttons++;
+            entrylines++;
+          }
+          if (entrylines == Constants.linesPerSearchEntry) {
+            break;
+          }
+
         }
 
-        if (include) {
-          Long tid = new Long(uid);
-          
-          //log.debug("Search match found for row "+(j-1));
-          
-          List<TranscriptionFragment> fraglist =  sess.createCriteria(TranscriptionFragment.class).add(Restrictions.eq("transcription.id", tid)).addOrder(Order.asc("time")).list();
-          TranscriptionFragment frag = fraglist.get(j-1);
-          
-          
-          results += "<a href='javascript:donothing();' id='playbutton_" + playbuttons + "' onclick='playOneLine(" + playbuttons + "," + uid
-              + ", " + frag.getTime() + ")'>CONTROL_PLAY</a> ..." + Tools.toQueryResult(queryString, line) + "...<br/>";
-          playbuttons++;
-          entrylines++;
-        }
-        if (entrylines == Constants.linesPerSearchEntry) {
-          break;
-        }
-        
+        finalResult.append("<h3><a href='play?trans=" + uid + "'>" + (i + 1) + ". " + title + "</a></h3>");
+
+        finalResult.append(results);
       }
-
-      finalResult.append("<h3><a href='play?trans=" + uid + "'>" + (i + 1) + ". " + title + "</a></h3>");
-
-      finalResult.append(results);
-    }
 
     } finally {
-      if (sess!=null) {
+      if (sess != null) {
         sess.close();
       }
-    }                    
+    }
 
     return finalResult.toString();
   }
@@ -546,26 +600,7 @@ public class TsabDao {
   }
 
   public List<Transcription> getRecentlyAdded() throws TsabException {
-    Session sess = HibernateUtil.getSessionFactory().openSession();
-    Transaction tx = sess.beginTransaction();
-    try {
-
-      try {
-        return sess.createCriteria(Transcription.class).setMaxResults(MAX_RECENTLY_ADDED)
-            .addOrder(Order.desc("recorded")).list();
-      } finally {
-        tx.commit();
-      }
-
-    } catch (Exception e) {
-
-      try {
-        tx.rollback();
-      } finally {
-        throw new TsabException("Failed to find Recently Added transcriptions!", e);
-      }
-
-    }
+    return getRecentlyAdded(MAX_RECENTLY_ADDED);
   }
 
   public List<Transcription> getMostPopular() throws TsabException {
@@ -748,14 +783,14 @@ public class TsabDao {
     Session sess = HibernateUtil.getSessionFactory().openSession();
     Transaction tx = sess.beginTransaction();
     try {
-      
-      Iterator it = sess.createCriteria(TranscriptionFragment.class).add(Restrictions.eq("transcription", newt))
-      .list().iterator();
+
+      Iterator it = sess.createCriteria(TranscriptionFragment.class).add(Restrictions.eq("transcription", newt)).list()
+          .iterator();
       while (it.hasNext()) {
         TranscriptionFragment frag = (TranscriptionFragment) it.next();
-        sess.delete(frag);  
+        sess.delete(frag);
       }
-      
+
       tx.commit();
     } catch (Exception e) {
       try {
@@ -764,7 +799,30 @@ public class TsabDao {
         throw new TsabException("Failed to delete transcription fragment for transcription'" + newt.getId() + "'", e);
       }
     }
-    
+
+  }
+
+  public List<Transcription> getRecentlyAdded(int maxResults) throws TsabException {
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+
+      try {
+        return sess.createCriteria(Transcription.class).setMaxResults(maxResults)
+            .addOrder(Order.desc("recorded")).list();
+      } finally {
+        tx.commit();
+      }
+
+    } catch (Exception e) {
+
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to find Recently Added transcriptions!", e);
+      }
+
+    }
   }
 
 }

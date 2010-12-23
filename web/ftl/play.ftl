@@ -47,6 +47,15 @@ ${loc.trans_untitled}
 </#if>
 	
 </p>
+
+<#if topics?exists>
+	<p><b>${loc.topics}</b></br/>
+	<#list topics as topic>
+		<div class="topic_nav topic_${topic.transientSeq}" style="cursor:pointer;" onclick="javascript:seekPosition(${topic.time});">${topic.transientTimeStr} <span class="topic_name">${topic.topicName}</span></div>
+	</#list>
+	</p>
+</#if>
+
 <div id='playcomponent'>
 	<div id='seekbar'><div id='playbar'></div></div>
 	<a href='#' onclick='playIt(); return false;'>${loc.control_play}</a>

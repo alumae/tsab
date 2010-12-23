@@ -119,7 +119,7 @@ public class TransAddCLIProvider implements CLIProvider {
         fragments.add(fr);
       }
 
-      current = TsabDaoService.getDao().addTranscription(newt, fragments);
+      current = TsabDaoService.getDao().addTranscription(newt, fragments, parser.getTopics());
 
     }
 

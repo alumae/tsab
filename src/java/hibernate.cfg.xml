@@ -52,6 +52,7 @@
 		<mapping class="ee.ioc.phon.tsab.domain.Category" />
 		<mapping class="ee.ioc.phon.tsab.domain.Transcription" />
 		<mapping class="ee.ioc.phon.tsab.domain.TranscriptionFragment" />
+		<mapping class="ee.ioc.phon.tsab.domain.TranscriptionTopic" />
 
 	</session-factory>
 

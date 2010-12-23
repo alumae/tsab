@@ -319,17 +319,67 @@ a.category:visited {
 	background: #696969;
 }
 
+
+.topic_name {
+	position:relative;
+	left:15px;
+	color:#000000;
+}
+
+.topic_nav
+{
+	padding-bottom:1px;
+	padding-left: 6px;
+	width: 600px;
+}
+
+
+.topic
+{
+	padding-left: 12px;
+}
+.topic_1
+{
+	background: #deffac;
+}
+.topic_2
+{
+	background: #ffdbb9;
+}
+.topic_3
+{
+	background: #c1d5f8;
+}
+.topic_4
+{
+	background: #f1d9f1;
+}
+.topic_5
+{
+	background: #ffef99;
+}
+.topic_6
+{
+	background: #fdccc7;
+}
+.topic_7
+{
+	background: #c3c3c3;
+}
+
+
 #seekbar
 {
-	height: 10px;
+	height: 12px;
 	background: #eee;
 	width: 600px;
 	margin-bottom: 5px;
+	margin-top: 5px;
 	cursor: pointer;
 }
 #seekbar #playbar
 {
-	height: 10px;
+	height: 12px;
 	background: #888;
 	width: 1px;
 	cursor: pointer;

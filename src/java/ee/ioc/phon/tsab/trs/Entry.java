@@ -7,11 +7,13 @@ public class Entry {
 	int time;
 	String author;
 	String line;
+	String topic;
 	
-	public Entry(int time, String author, String line) {
+	public Entry(int time, String author, String line, String topic) {
 		this.time = time;
 		this.author = author;
 		this.line = line;
+		this.topic = topic;
 	}
 	
 	public TranscriptionFragment generateTranscriptionFragment() {	  
@@ -19,6 +21,7 @@ public class Entry {
 	  t.setTime(new Long(time));
 	  t.setAuthor(author);
 	  t.setText(line);
+	  t.setTransientTopicDesc(topic);
 		return t;		
 	}
 	

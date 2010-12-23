@@ -4,16 +4,17 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
-import javax.naming.directory.SearchResult;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +26,7 @@ import ee.ioc.phon.tsab.dao.TsabDaoService;
 import ee.ioc.phon.tsab.domain.Category;
 import ee.ioc.phon.tsab.domain.Transcription;
 import ee.ioc.phon.tsab.domain.TranscriptionFragment;
+import ee.ioc.phon.tsab.domain.TranscriptionTopic;
 import freemarker.ext.beans.BeansWrapper;
 import freemarker.ext.servlet.FreemarkerServlet;
 import freemarker.template.Configuration;
@@ -72,9 +74,19 @@ public class TsabServlet extends FreemarkerServlet {
         handleLoadAudio(request, response);
       } else if ("/calendar".equals(path)) {
         handleCalendar(request, response);
+      } else if ("/rssRecent".equals(path)) {
+        handleRSSRecent(request, response);
+      }else if ("/login".equals(path)) {
+        handleLogin(request, response);
       }
 
       request.setAttribute("ctxpath", request.getContextPath());
+      
+      StringBuffer url = request.getRequestURL();
+      //strip last segment after /
+      String reqUrl = url.substring(0, url.lastIndexOf("/"));
+      request.setAttribute("requestUrl", reqUrl);
+      
 
     } catch (Exception e) {
       log.warn("Failed to process request!", e);
@@ -103,10 +115,30 @@ public class TsabServlet extends FreemarkerServlet {
     Long transId = new Long(request.getParameter("audio"));
     Transcription playTrans;
     List<TranscriptionFragment> speech;
+    
+    //List<TranscriptionTopic> topics;
 
     try {
       playTrans = TsabDaoService.getDao().getTranscriptionById(transId);
       speech = TsabDaoService.getDao().getTranscriptionFragments(playTrans);
+      //topics = TsabDaoService.getDao().getTranscriptionTopics(playTrans);
+      
+      // Instrument speech TranscriptionFragments with transient topicId
+      int topicSeq = 0;
+      Set<String> topicSet = new HashSet<String>();
+      Iterator<TranscriptionFragment> iter = speech.iterator();
+      while (iter.hasNext()) {
+        TranscriptionFragment f = (TranscriptionFragment) iter.next();
+        TranscriptionTopic t = f.getTopic();
+        
+        if (t!=null && !topicSet.contains(t.getTopicId())) {
+          topicSeq++;
+          topicSet.add(t.getTopicId());
+        }
+        
+        f.setTransientTopicSeq(t==null?0:topicSeq);
+        f.setTransientTopicDesc(t==null?"":t.getTopicName());
+      }
 
     } catch (TsabException e) {
       log.warn(e);
@@ -115,7 +147,11 @@ public class TsabServlet extends FreemarkerServlet {
     }
     request.setAttribute("t", playTrans);
     request.setAttribute("speech", speech);
-
+    
+    /*if (topics.size()>0){
+      request.setAttribute("topics", topics);  
+    }
+*/
     try {
       request.setCharacterEncoding("UTF-8");
     } catch (UnsupportedEncodingException e) {
@@ -187,6 +223,8 @@ public class TsabServlet extends FreemarkerServlet {
     
     boolean debugEnabled = debugStr!=null && debugStr.length()>0;
     
+    List<TranscriptionTopic> topics = null; 
+    
     // Play page    
     Long transId = new Long(request.getParameter("trans"));
     Transcription playTrans;
@@ -197,6 +235,7 @@ public class TsabServlet extends FreemarkerServlet {
 
       if (playTrans != null) {
         TsabDaoService.getDao().increaseViewCount(transId);
+        topics = TsabDaoService.getDao().getTranscriptionTopics(playTrans);
       }
 
     } catch (TsabException e) {
@@ -204,7 +243,38 @@ public class TsabServlet extends FreemarkerServlet {
       throw new RuntimeException("Unable to load transcription or related recordings for transcription id '" + transId
           + "'!", e);
     }
+    
     request.setAttribute("transcription", playTrans);
+    
+    if (topics!=null && topics.size()>0) {
+      //iterate through and assign transients
+      
+      boolean showHour = false;
+      if (topics.size()>0) {
+        long lastMs = topics.get(topics.size()-1).getTime();
+        showHour = lastMs>1000*60*60;
+      }
+      
+      Iterator<TranscriptionTopic> ttit = topics.iterator();
+      int seq = 0;
+      while (ttit.hasNext()) {
+        TranscriptionTopic t = (TranscriptionTopic) ttit.next();
+        
+        long ms = t.getTime();
+        
+        long hours = TimeUnit.MILLISECONDS.toHours(ms);
+        long mins = TimeUnit.MILLISECONDS.toMinutes(ms)-TimeUnit.HOURS.toMinutes(hours);
+        long secs = TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(mins) - TimeUnit.HOURS.toSeconds(hours);
+        
+        String timeStr = (showHour?hours+":":"")+(mins < 10 ? "0" : "")+mins+":"+(secs < 10 ? "0" : "")+secs;
+        
+        t.setTransientSeq(++seq);
+        t.setTransientTimeStr(timeStr);
+        
+      }
+      request.setAttribute("topics", topics);
+    }
+    
     request.setAttribute("playCount", Math.floor(playTrans.getAudioLength().longValue()/60f)+1);
     request.setAttribute("playLength", playTrans.getAudioLength().longValue());
     request.setAttribute("relatedRecordings", relatedRecordings);    
@@ -317,4 +387,13 @@ public class TsabServlet extends FreemarkerServlet {
     cfg.setLocale(locale);
   }
 
+  private void handleRSSRecent(HttpServletRequest request, HttpServletResponse response) throws TsabException {
+      List<Transcription> recentlyAdded = TsabDaoService.getDao().getRecentlyAdded(10);
+      request.setAttribute("recentlyAdded", recentlyAdded);
+  }
+
+  private void handleLogin(HttpServletRequest request, HttpServletResponse response) throws TsabException {
+  }
+
+  
 }

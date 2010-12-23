@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity(name="transcriptionfragment")
 @Table(name="transcriptionfragment")
@@ -14,9 +15,12 @@ public class TranscriptionFragment {
 
   private Long id;
   private Transcription transcription;
+  private TranscriptionTopic topic;
   private Long time;
   private String author;
   private String text;
+  private String transientTopicDesc;
+  private int transientTopicSeq;
 
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -37,6 +41,16 @@ public class TranscriptionFragment {
     this.transcription = transcription;
   }
 
+  @ManyToOne(optional=true)
+  public TranscriptionTopic getTopic() {
+    return topic;
+  }
+
+  public void setTopic(TranscriptionTopic transTopic) {
+    this.topic = transTopic;
+  }
+
+  
   @Column
   public Long getTime() {
     return time;
@@ -64,4 +78,23 @@ public class TranscriptionFragment {
     this.text = text;
   }
 
+  public void setTransientTopicDesc(String topic) {
+    // Helps binding later
+    this.transientTopicDesc = topic;
+  }
+
+  @Transient
+  public String getTransientTopicId() {
+    return transientTopicDesc;
+  }
+
+  @Transient
+  public int getTransientTopicSeq() {
+    return transientTopicSeq;
+  }
+
+  public void setTransientTopicSeq(int transientTopicSeq) {
+    this.transientTopicSeq = transientTopicSeq;
+  }
+  
 }

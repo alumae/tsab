@@ -55,6 +55,7 @@
 	<div id="page_navi" class="wrap">
 	  <div class="col-right">
 	    <ul id="nav">
+		  <li class="page_item"><a href="login">${loc.login}</a>
 	      <li class="page_item"><a href="about">${loc.about}</a>
 	      <li class="page_item last"><a href="mailto:${loc.email_address}">${loc.email}</a>
 	    </ul>

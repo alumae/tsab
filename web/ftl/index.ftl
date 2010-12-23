@@ -1,7 +1,7 @@
 <#global tab>index</#global>
 <#global main>
 
-<h1>${loc.heading_recently_added}</h1>
+<h1>${loc.heading_recently_added} <a href="rssRecent"><img src="../img/ico_rss.gif" alt="" border="0"/></a></h1>
 <ul>
 <#list recentlyAdded as row>
 	<li>
@@ -11,6 +11,7 @@
 		 <a href="play?trans=${row.id}"><#if row.title?exists>${row.title}<#else>Untitled</#if></a>
 </#list>
 </ul>
+
 <h1>${loc.heading_most_popular}</h1>
 <ul>
 <#list mostPopular as row>

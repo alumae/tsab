@@ -308,7 +308,7 @@ var newSpeech = function() {
 
 	speakerCount = 0;
 	speakers = new Object();
-	
+
 	var lines = "";
 	for(i = 0; i < speech.length; i++)
 	{
@@ -317,11 +317,13 @@ var newSpeech = function() {
 		}
 		
 		sameone = (i>0 && speech[i][0]==speech[i-1][0]);
-		lines += "<div class='speaker speaker_"+speakers[speech[i][0]]+"' id='linetop_"+i+"' >"+
+		
+		lines += "<div class='topic topic_"+speech[i][3]+"' title='"+speech[i][4]+"' >"+ 
+				"<div class='speaker speaker_"+speakers[speech[i][0]]+"' id='linetop_"+i+"' >"+
 				"<div class='line"+(sameone?" sameone":"")+"' id='line_"+i+"' onclick='seekLine("+i+"); return false;'>"+
 					( !sameone ? "<strong>"+speech[i][0]+":</strong> " : "")+
 					speech[i][2]+
-				"</div></div>";
+				"</div></div></div>";
 	}
 	$('lines').innerHTML = lines;
 	
