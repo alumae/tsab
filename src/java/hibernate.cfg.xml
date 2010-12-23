@@ -53,6 +53,8 @@
 		<mapping class="ee.ioc.phon.tsab.domain.Transcription" />
 		<mapping class="ee.ioc.phon.tsab.domain.TranscriptionFragment" />
 		<mapping class="ee.ioc.phon.tsab.domain.TranscriptionTopic" />
+		<mapping class="ee.ioc.phon.tsab.domain.User" />
+		<mapping class="ee.ioc.phon.tsab.domain.TranscriptionFragmentCorrection" />
 
 	</session-factory>
 

@@ -38,24 +38,24 @@ public class TsabServlet extends FreemarkerServlet {
 
   private final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-  private final static String PARAM_TSAB_LANGUAGE="TsabLanguage";
-  
+  private final static String PARAM_TSAB_LANGUAGE = "TsabLanguage";
+
   private ResourceBundle bundle;
-  
+
   public TsabServlet() {
     super();
   }
-  
+
   @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     doGet(request, response);
   }
-  
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    
-    request.setCharacterEncoding("UTF-8"); 
-    
+
+    request.setCharacterEncoding("UTF-8");
+
     String path = request.getPathInfo();
     log.debug("Handling page: " + path);
 
@@ -76,17 +76,16 @@ public class TsabServlet extends FreemarkerServlet {
         handleCalendar(request, response);
       } else if ("/rssRecent".equals(path)) {
         handleRSSRecent(request, response);
-      }else if ("/login".equals(path)) {
+      } else if ("/login".equals(path)) {
         handleLogin(request, response);
       }
 
       request.setAttribute("ctxpath", request.getContextPath());
-      
+
       StringBuffer url = request.getRequestURL();
       //strip last segment after /
       String reqUrl = url.substring(0, url.lastIndexOf("/"));
       request.setAttribute("requestUrl", reqUrl);
-      
 
     } catch (Exception e) {
       log.warn("Failed to process request!", e);
@@ -115,14 +114,14 @@ public class TsabServlet extends FreemarkerServlet {
     Long transId = new Long(request.getParameter("audio"));
     Transcription playTrans;
     List<TranscriptionFragment> speech;
-    
+
     //List<TranscriptionTopic> topics;
 
     try {
       playTrans = TsabDaoService.getDao().getTranscriptionById(transId);
       speech = TsabDaoService.getDao().getTranscriptionFragments(playTrans);
       //topics = TsabDaoService.getDao().getTranscriptionTopics(playTrans);
-      
+
       // Instrument speech TranscriptionFragments with transient topicId
       int topicSeq = 0;
       Set<String> topicSet = new HashSet<String>();
@@ -130,14 +129,14 @@ public class TsabServlet extends FreemarkerServlet {
       while (iter.hasNext()) {
         TranscriptionFragment f = (TranscriptionFragment) iter.next();
         TranscriptionTopic t = f.getTopic();
-        
-        if (t!=null && !topicSet.contains(t.getTopicId())) {
+
+        if (t != null && !topicSet.contains(t.getTopicId())) {
           topicSeq++;
           topicSet.add(t.getTopicId());
         }
-        
-        f.setTransientTopicSeq(t==null?0:topicSeq);
-        f.setTransientTopicDesc(t==null?"":t.getTopicName());
+
+        f.setTransientTopicSeq(t == null ? 0 : topicSeq);
+        f.setTransientTopicDesc(t == null ? "" : t.getTopicName());
       }
 
     } catch (TsabException e) {
@@ -147,11 +146,11 @@ public class TsabServlet extends FreemarkerServlet {
     }
     request.setAttribute("t", playTrans);
     request.setAttribute("speech", speech);
-    
+
     /*if (topics.size()>0){
       request.setAttribute("topics", topics);  
     }
-*/
+    */
     try {
       request.setCharacterEncoding("UTF-8");
     } catch (UnsupportedEncodingException e) {
@@ -206,8 +205,6 @@ public class TsabServlet extends FreemarkerServlet {
       request.setAttribute("currentCategoryId", new Long(cat));
     }
 
-    
-    
   }
 
   private Category traverseToRootCategory(Category activeMainCategory) {
@@ -218,13 +215,13 @@ public class TsabServlet extends FreemarkerServlet {
   }
 
   private void handlePlay(HttpServletRequest request, HttpServletResponse response) {
-    
+
     String debugStr = request.getParameter("zebug");
-    
-    boolean debugEnabled = debugStr!=null && debugStr.length()>0;
-    
-    List<TranscriptionTopic> topics = null; 
-    
+
+    boolean debugEnabled = debugStr != null && debugStr.length() > 0;
+
+    List<TranscriptionTopic> topics = null;
+
     // Play page    
     Long transId = new Long(request.getParameter("trans"));
     Transcription playTrans;
@@ -243,80 +240,85 @@ public class TsabServlet extends FreemarkerServlet {
       throw new RuntimeException("Unable to load transcription or related recordings for transcription id '" + transId
           + "'!", e);
     }
-    
+
     request.setAttribute("transcription", playTrans);
-    
-    if (topics!=null && topics.size()>0) {
+
+    if (topics != null && topics.size() > 0) {
       //iterate through and assign transients
-      
+
       boolean showHour = false;
-      if (topics.size()>0) {
-        long lastMs = topics.get(topics.size()-1).getTime();
-        showHour = lastMs>1000*60*60;
+      if (topics.size() > 0) {
+        long lastMs = topics.get(topics.size() - 1).getTime();
+        showHour = lastMs > 1000 * 60 * 60;
       }
-      
+
       Iterator<TranscriptionTopic> ttit = topics.iterator();
       int seq = 0;
       while (ttit.hasNext()) {
         TranscriptionTopic t = (TranscriptionTopic) ttit.next();
-        
-        long ms = t.getTime();
-        
-        long hours = TimeUnit.MILLISECONDS.toHours(ms);
-        long mins = TimeUnit.MILLISECONDS.toMinutes(ms)-TimeUnit.HOURS.toMinutes(hours);
-        long secs = TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(mins) - TimeUnit.HOURS.toSeconds(hours);
-        
-        String timeStr = (showHour?hours+":":"")+(mins < 10 ? "0" : "")+mins+":"+(secs < 10 ? "0" : "")+secs;
-        
-        t.setTransientSeq(++seq);
-        t.setTransientTimeStr(timeStr);
+
+        if (t != null && t.getTime()!=null) {
+          long ms = t.getTime();
+
+          long hours = TimeUnit.MILLISECONDS.toHours(ms);
+          long mins = TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(hours);
+          long secs = TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(mins)
+              - TimeUnit.HOURS.toSeconds(hours);
+
+          String timeStr = (showHour ? hours + ":" : "") + (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "")
+              + secs;
+          t.setTransientTimeStr(timeStr);
+        }
+
+        if (t!=null) {
+          t.setTransientSeq(++seq);
+        }
         
       }
       request.setAttribute("topics", topics);
     }
-    
-    request.setAttribute("playCount", Math.floor(playTrans.getAudioLength().longValue()/60f)+1);
+
+    request.setAttribute("playCount", Math.floor(playTrans.getAudioLength().longValue() / 60f) + 1);
     request.setAttribute("playLength", playTrans.getAudioLength().longValue());
-    request.setAttribute("relatedRecordings", relatedRecordings);    
-    
+    request.setAttribute("relatedRecordings", relatedRecordings);
+
     if (debugEnabled) {
       request.setAttribute("zebug", Boolean.TRUE);
     }
-    
+
   }
 
   private void handleSearch(HttpServletRequest request, HttpServletResponse response) throws TsabException {
-    
-    String debugStr = request.getParameter("zebug");
-    
-    boolean debugEnabled = debugStr!=null && debugStr.length()>0;
 
-    
+    String debugStr = request.getParameter("zebug");
+
+    boolean debugEnabled = debugStr != null && debugStr.length() > 0;
+
     // Search page
     String queryString = request.getParameter("q");
-    
-    String searchResult = "";
-    
-    if (queryString==null || queryString.length()==0) {      
-      searchResult = bundle.getString("search_query_not_specified");
-    } else {    
 
-      log.debug("Searching for "+queryString);
+    String searchResult = "";
+
+    if (queryString == null || queryString.length() == 0) {
+      searchResult = bundle.getString("search_query_not_specified");
+    } else {
+
+      log.debug("Searching for " + queryString);
 
       searchResult = TsabDaoService.getDao().searchTranscriptions(queryString);
-      if (searchResult!=null) {
-        String playstr = bundle.getString("control_play");  
+      if (searchResult != null) {
+        String playstr = bundle.getString("control_play");
         searchResult = searchResult.replaceAll("CONTROL_PLAY", playstr);
-        
+
       }
     }
-    
+
     request.setAttribute("searchResult", searchResult);
-    
+
     if (debugEnabled) {
       request.setAttribute("zebug", Boolean.TRUE);
     }
-    
+
   }
 
   private void handleCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException {
@@ -366,12 +368,12 @@ public class TsabServlet extends FreemarkerServlet {
     return new Configuration() {
       @Override
       public void setSetting(String key, String value) throws TemplateException {
-        if (key!=null && PARAM_TSAB_LANGUAGE.equalsIgnoreCase(key)) {
+        if (key != null && PARAM_TSAB_LANGUAGE.equalsIgnoreCase(key)) {
           initLanguage(this, value);
         } else {
           super.setSetting(key, value);
         }
-        
+
       }
 
     };
@@ -379,8 +381,8 @@ public class TsabServlet extends FreemarkerServlet {
 
   private void initLanguage(Configuration cfg, String value) {
     Locale locale = Locale.ENGLISH;
-    if (value!=null && value.length()>0) {
-      log.info("Configuring servlet instance for language code: "+value);
+    if (value != null && value.length() > 0) {
+      log.info("Configuring servlet instance for language code: " + value);
       locale = new Locale(value);
     }
     bundle = ResourceBundle.getBundle("messages", locale);
@@ -388,12 +390,11 @@ public class TsabServlet extends FreemarkerServlet {
   }
 
   private void handleRSSRecent(HttpServletRequest request, HttpServletResponse response) throws TsabException {
-      List<Transcription> recentlyAdded = TsabDaoService.getDao().getRecentlyAdded(10);
-      request.setAttribute("recentlyAdded", recentlyAdded);
+    List<Transcription> recentlyAdded = TsabDaoService.getDao().getRecentlyAdded(10);
+    request.setAttribute("recentlyAdded", recentlyAdded);
   }
 
   private void handleLogin(HttpServletRequest request, HttpServletResponse response) throws TsabException {
   }
 
-  
 }

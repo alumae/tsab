@@ -51,7 +51,7 @@ ${loc.trans_untitled}
 <#if topics?exists>
 	<p><b>${loc.topics}</b></br/>
 	<#list topics as topic>
-		<div class="topic_nav topic_${topic.transientSeq}" style="cursor:pointer;" onclick="javascript:seekPosition(${topic.time});">${topic.transientTimeStr} <span class="topic_name">${topic.topicName}</span></div>
+		<div class="topic_nav topic_${topic.transientSeq}" style="cursor:pointer;" onclick="javascript:seekPosition(<#if topic.time?exists>${topic.time}<#else>0</#if>);"><#if topic.transientTimeStr?exists>${topic.transientTimeStr}<#else>-</#if> <span class="topic_name">${topic.topicName}</span></div>
 	</#list>
 	</p>
 </#if>
