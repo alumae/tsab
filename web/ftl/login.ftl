@@ -1,6 +1,6 @@
 <#global tab>login</#global>
 <#global main>
-Login failed!
+${loc.login_failed}
 </#global>
 <#import "layout.ftl" as lay>
 <@lay.layout/>

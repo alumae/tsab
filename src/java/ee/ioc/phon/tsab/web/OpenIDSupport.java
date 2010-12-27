@@ -80,6 +80,11 @@ public class OpenIDSupport {
 
     Identifier verified = verification.getVerifiedId();
 
+    log.debug("AUTH-STATUS:"+verification.getStatusMsg());
+    if (discovered!=null) {
+      log.debug("AUTH-DISCOVERY:"+discovered.getDelegateIdentifier()+";"+discovered.getVersion()+";"+discovered.getClaimedIdentifier());
+    }
+    
     if (verified != null) {
       log.info("User identified:" + verified.getIdentifier());
       AuthSuccess authSuccess = (AuthSuccess) verification.getAuthResponse();
