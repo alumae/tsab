@@ -14,6 +14,8 @@ var schedPos = -1;
 var schedLine = -1;
 var latestFrag = -1;
 
+var editEnabled = false;
+
 var createAudio = function(filename, autoplay) {
 
 	soundManager.onready(function() {
@@ -127,6 +129,22 @@ var loadAudio = function(ctxpath, name, autoplay) {
 	
 }
 
+var submitCorrection = function(ctxpath, tranid, time, newtext) {
+	
+	new Ajax.Request(ctxpath+'/p/submitcorrection', {
+		method:'post',
+		parameters:'tranid='+tranid+'&time='+time+'&newtext='+encodeURIComponent(newtext),
+		onSuccess: function(transport){
+		    //var json = transport.responseText.evalJSON();
+		    //speech = json['speech'];
+		    //activeLine = -1;		    
+		    //newSpeech();		 	
+		    //createAudio(json['file'], autoplay);
+		}
+	});
+	
+}
+
 var moveBar = function(fragNo, current) {
 
 	var max = playLength*1000;
@@ -204,9 +222,25 @@ var findLine = function(time) {
 
 var seekLine = function(i) {
 
-	var pos = speech[i][1];
-	
+	var pos = speech[i][1];	
+
+	if (editEnabled==true) {
+		editToggle = false;
+		jQuery('#edit_textarea').val(speech[i][2]);
+		jQuery('#edit_line').val(i);
+		jQuery('#edit_time').val(pos);		
+		jQuery('#editdialog').dialog('open');		
+		return;
+	}
+
+	playLine(i);
+
+}
+
+var playLine = function(i) {
+	var pos = speech[i][1];	
 	var fragmult = Math.floor(pos/1000/60)+1;
+	
 	var fragpos = fragmult;
 	
 	var sound = soundManager.getSoundById('speech_'+fragmult); // predefined/preloaded sound
@@ -236,7 +270,6 @@ var seekLine = function(i) {
 		//bufferState('Scheduling play '+fragpos+' at position '+newpos);
 	}
 	//bufferState('Playing '+fragmult+' at position '+newpos);
-
 }
 
 // pos -- ms position
@@ -458,3 +491,18 @@ var playNextIfTime = function(currentSound) {
  
  var donothing = function() {
  }
+ 
+ var toggleEdit = function() {
+ 	editEnabled = !editEnabled;
+ 	
+ 	if (editEnabled) {
+ 		$('editLink').innerHTML=loc_corr_stop_edit;
+ 	} else {
+ 		$('editLink').innerHTML=loc_corr_edit;
+ 	}
+ }
+ 
+ var editSpeechLine = function(i, newtext) {
+ 	speech[i][2]=newtext;
+ }
+ 

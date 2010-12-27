@@ -3,6 +3,14 @@
 
 <#global headExtra>
 
+<link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.7.custom.css" rel="stylesheet" />	
+<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.8.7.custom.min.js"></script>
+
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+
 <#if zebug?exists>
 	<script type='text/javascript'>
 	 	var zebug = true;
@@ -25,7 +33,12 @@ soundManager.debugMode = true;
 var playCount = ${playCount};
 var playLength = ${playLength}; // in seconds
 
+var loc_corr_edit = '${loc.play_correction_edit}';
+var loc_corr_stop_edit = '${loc.play_correction_stop_edit}';
+
 </script>
+
+
 </#global>
 
 <#global main>
@@ -89,12 +102,61 @@ Event.observe(window, 'load', function() {
 	loadAudio("${ctxpath}", speech, true);
 	
 	$('position').innerHTML = toTime(0)+" / "+toTime(playLength*1000);
+
+	var editToggle = false;
 	
+	// Dialog			
+	jQuery('#editdialog').dialog({
+		autoOpen: false,
+		width: 600,
+		modal: true,
+		buttons: {
+			"${loc.play_correction_playstop}": function() {
+				editToggle=!editToggle;
+				if (editToggle==true) { 
+					playLine(jQuery('#edit_line').val());
+				} else {
+					soundManager.stopAll();
+				}				
+			}, 
+			"${loc.play_correction_save}": function() {
+				//in-place replace
+				
+				line = jQuery('#edit_line').val();				
+				newtext = jQuery('#edit_textarea').val();
+
+				$('line_'+line).innerHTML = newtext;
+				editSpeechLine(line, newtext);
+				
+				//submit contribution to server
+				//alert('submitting change to server');
+
+				tranid = ${transcription.id};
+				time = jQuery('#edit_time').val();
+		
+				submitCorrection('${ctxpath}', tranid, time, newtext);
+				
+				jQuery(this).dialog("close"); 
+			}, 
+			"${loc.play_correction_cancel}": function() { 
+				jQuery(this).dialog("close"); 
+			} 
+		}
+	});
+
 });
 
 </script>	
 
-<p>${loc.play_count}: <#if transcription.viewCount?exists>${transcription.viewCount}</#if></p>
+<p>${loc.play_count}: <#if transcription.viewCount?exists>${transcription.viewCount}</#if><br/>
+
+<#if tsabuser?exists><a href="javascript:donothing();" onclick="javascript:toggleEdit();"><span id="editLink">
+${loc.play_correction_edit}
+</span></a>
+<#else>
+${loc.play_correction_login_required}
+</#if>
+</p>
 
 <#if relatedRecordings?exists>
 <h1>${loc.heading_related_recordings}</h1>
@@ -104,6 +166,16 @@ ${relatedRecordings}
 <#else>
 <h1>Transcription with the given id not found!</h1>
 </#if>
+
+<div style="position: relative; width: 96%; height: 200px; padding:1% 4%; overflow:hidden;" class="fakewindowcontain">
+<div id="editdialog" title="${loc.play_correction_dialog_title}">
+	<form>
+		<input type="hidden" id="edit_line" name="edit_line"/>
+		<input type="hidden" id="edit_time" name="edit_time"/>
+		<textarea id="edit_textarea" name="edit_textarea" cols="70" rows="5"></textarea>
+	</form>
+</div>
+</div>
 
 </#global>
 <#import "layout.ftl" as lay>

@@ -24,15 +24,20 @@ import org.apache.log4j.Logger;
 import ee.ioc.phon.tsab.common.TsabException;
 import ee.ioc.phon.tsab.dao.TsabDaoService;
 import ee.ioc.phon.tsab.domain.Category;
+import ee.ioc.phon.tsab.domain.Classifiers;
 import ee.ioc.phon.tsab.domain.Transcription;
 import ee.ioc.phon.tsab.domain.TranscriptionFragment;
+import ee.ioc.phon.tsab.domain.TranscriptionFragmentCorrection;
 import ee.ioc.phon.tsab.domain.TranscriptionTopic;
+import ee.ioc.phon.tsab.domain.User;
 import freemarker.ext.beans.BeansWrapper;
 import freemarker.ext.servlet.FreemarkerServlet;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 
 public class TsabServlet extends FreemarkerServlet {
+
+  private static final String ATTR_TSAB_USER = "tsab.user";
 
   private final static Logger log = Logger.getLogger(TsabServlet.class);
 
@@ -76,8 +81,16 @@ public class TsabServlet extends FreemarkerServlet {
         handleCalendar(request, response);
       } else if ("/rssRecent".equals(path)) {
         handleRSSRecent(request, response);
+      } else if ("/account".equals(path)) {
+        handleAccount(request, response);
       } else if ("/login".equals(path)) {
         handleLogin(request, response);
+      } else if ("/corrections".equals(path)) {
+        handleCorrections(request, response);
+      } else if ("/users".equals(path)) {
+        handleUsers(request, response);
+      } else if ("/submitcorrection".equals(path)) {
+        handleSubmitCorrection(request, response);
       }
 
       request.setAttribute("ctxpath", request.getContextPath());
@@ -119,8 +132,9 @@ public class TsabServlet extends FreemarkerServlet {
 
     try {
       playTrans = TsabDaoService.getDao().getTranscriptionById(transId);
-      speech = TsabDaoService.getDao().getTranscriptionFragments(playTrans);
-      //topics = TsabDaoService.getDao().getTranscriptionTopics(playTrans);
+
+      User tsabUser = (User) request.getSession().getAttribute(ATTR_TSAB_USER);
+      speech = TsabDaoService.getDao().getTranscriptionFragments(playTrans, tsabUser);
 
       // Instrument speech TranscriptionFragments with transient topicId
       int topicSeq = 0;
@@ -140,7 +154,7 @@ public class TsabServlet extends FreemarkerServlet {
       }
 
     } catch (TsabException e) {
-      log.warn(e);
+      log.warn("Failed to load transcription info", e);
       throw new RuntimeException("Unable to load transcription or related recordings for transcription id '" + transId
           + "'!", e);
     }
@@ -165,6 +179,8 @@ public class TsabServlet extends FreemarkerServlet {
     request.setAttribute("loc", bundle);
 
     request.setAttribute("statics", BeansWrapper.getDefaultInstance().getStaticModels());
+
+    initLoginModel(request, response);
 
     // Main layout
     List<Category> mainCategories;
@@ -203,6 +219,14 @@ public class TsabServlet extends FreemarkerServlet {
 
     if (cat != null && cat.length() > 0) {
       request.setAttribute("currentCategoryId", new Long(cat));
+    }
+
+  }
+
+  private void initLoginModel(HttpServletRequest request, HttpServletResponse response) {
+    User user = (User) request.getSession().getAttribute(ATTR_TSAB_USER);
+    if (user != null) {
+      request.setAttribute("tsabuser", user);
     }
 
   }
@@ -257,7 +281,7 @@ public class TsabServlet extends FreemarkerServlet {
       while (ttit.hasNext()) {
         TranscriptionTopic t = (TranscriptionTopic) ttit.next();
 
-        if (t != null && t.getTime()!=null) {
+        if (t != null && t.getTime() != null) {
           long ms = t.getTime();
 
           long hours = TimeUnit.MILLISECONDS.toHours(ms);
@@ -270,10 +294,10 @@ public class TsabServlet extends FreemarkerServlet {
           t.setTransientTimeStr(timeStr);
         }
 
-        if (t!=null) {
+        if (t != null) {
           t.setTransientSeq(++seq);
         }
-        
+
       }
       request.setAttribute("topics", topics);
     }
@@ -394,7 +418,105 @@ public class TsabServlet extends FreemarkerServlet {
     request.setAttribute("recentlyAdded", recentlyAdded);
   }
 
+  private void handleUsers(HttpServletRequest request, HttpServletResponse response) throws TsabException {
+    
+    assertSuperUser(request);
+    
+    String grantUserId = request.getParameter("grantUserId");
+    String grantRole = request.getParameter("grantRole");
+
+    User user = (User) request.getSession().getAttribute(ATTR_TSAB_USER);
+    if (user == null || !Classifiers.USER_ROLE_SUPER.equals(user.getRole())) {
+      String reason = user == null ? "User not authenticated." : "User not in required role";
+      throw new TsabException("Unauthorized access to users page! Reason: " + reason);
+    }
+
+    if (grantUserId != null && grantRole != null) {
+      TsabDaoService.getDao().setUserRole(grantUserId, grantRole);
+    }
+
+    List<User> users = TsabDaoService.getDao().getRegisteredUsers();
+    request.setAttribute("users", users);
+  }
+
+  private void handleCorrections(HttpServletRequest request, HttpServletResponse response) throws TsabException {
+    
+    assertSuperUser(request);
+    
+    String accept = request.getParameter("accept");
+    String reject = request.getParameter("reject");
+    
+    if (accept!=null) {
+      TsabDaoService.getDao().acceptCorrection(new Long(accept));
+    }
+    
+    if (reject!=null) {
+      TsabDaoService.getDao().rejectCorrection(new Long(reject));
+    }
+    
+    List<TranscriptionFragmentCorrection> corrections = TsabDaoService.getDao().getPendingCorrections();
+    request.setAttribute("corrections", corrections);
+  }
+
+  private void assertSuperUser(HttpServletRequest request) throws TsabException {
+    User user = (User) request.getSession().getAttribute(ATTR_TSAB_USER);
+    
+    if (!Classifiers.USER_ROLE_SUPER.equals(user.getRole())) {
+      throw new TsabException("Unauthorized access for user! user:"+user);
+    }
+  }
+
+  private void handleSubmitCorrection(HttpServletRequest request, HttpServletResponse response) throws TsabException {
+    
+    User user = (User) request.getSession().getAttribute(ATTR_TSAB_USER);
+    
+    log.debug("request for correction; user:"+user);
+    
+    Long tranid = new Long(request.getParameter("tranid"));
+    Long time = new Long(request.getParameter("time"));
+    String text = request.getParameter("newtext");
+    
+    log.debug(".. processing:" + tranid + ";" + time + ";" + text);
+    TsabDaoService.getDao().submitCorrection(user, tranid, time, text);
+  }
+
+  private void handleAccount(HttpServletRequest request, HttpServletResponse response) throws TsabException {
+    String logout = request.getParameter("logout");
+
+    if (logout != null && "true".equals(logout)) {
+      request.getSession().removeAttribute(ATTR_TSAB_USER);
+      try {
+        response.sendRedirect("index");
+      } catch (IOException e) {
+        throw new TsabException("Failed to redirect logged out user to index page");
+      }
+      return;
+    }
+
+    User user = (User) request.getSession().getAttribute(ATTR_TSAB_USER);
+    if (user != null) {
+      // authenticated user, continue
+    } else {
+      OpenIDSupport.requestLogin(request, response);
+    }
+  }
+
   private void handleLogin(HttpServletRequest request, HttpServletResponse response) throws TsabException {
+    User authenticatedUser = OpenIDSupport.verify(request, response);
+    if (authenticatedUser != null) {
+
+      request.getSession().setAttribute(ATTR_TSAB_USER, authenticatedUser);
+
+      StringBuffer url = request.getRequestURL();
+      String reqUrl = url.substring(0, url.lastIndexOf("/"));
+      try {
+        response.sendRedirect(reqUrl + "/account");
+      } catch (IOException e) {
+        throw new TsabException("Failed to redirect to account page!", e);
+      }
+    } else {
+      // login failed, show "login" page
+    }
   }
 
 }

@@ -2,6 +2,7 @@ package ee.ioc.phon.tsab.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ public class TranscriptionFragment {
   private Long time;
   private String author;
   private String text;
+  private String originalText;
   private String transientTopicDesc;
   private int transientTopicSeq;
 
@@ -32,7 +34,7 @@ public class TranscriptionFragment {
     this.id = id;
   }
 
-  @ManyToOne(optional=false)
+  @ManyToOne(optional=false,fetch=FetchType.EAGER)
   public Transcription getTranscription() {
     return transcription;
   }
@@ -95,6 +97,15 @@ public class TranscriptionFragment {
 
   public void setTransientTopicSeq(int transientTopicSeq) {
     this.transientTopicSeq = transientTopicSeq;
+  }
+
+  @Column(name="original_text")
+  public String getOriginalText() {
+    return originalText;
+  }
+
+  public void setOriginalText(String originalText) {
+    this.originalText = originalText;
   }
   
 }

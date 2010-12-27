@@ -18,6 +18,7 @@ import org.apache.lucene.search.Query;
 import org.apache.lucene.search.Searcher;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.search.similar.MoreLikeThis;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
@@ -28,9 +29,12 @@ import ee.ioc.phon.tsab.common.Search;
 import ee.ioc.phon.tsab.common.Tools;
 import ee.ioc.phon.tsab.common.TsabException;
 import ee.ioc.phon.tsab.domain.Category;
+import ee.ioc.phon.tsab.domain.Classifiers;
 import ee.ioc.phon.tsab.domain.Transcription;
 import ee.ioc.phon.tsab.domain.TranscriptionFragment;
+import ee.ioc.phon.tsab.domain.TranscriptionFragmentCorrection;
 import ee.ioc.phon.tsab.domain.TranscriptionTopic;
+import ee.ioc.phon.tsab.domain.User;
 
 public class TsabDao {
 
@@ -95,25 +99,7 @@ public class TsabDao {
   }
 
   public List<TranscriptionFragment> getTranscriptionFragments(Transcription current) throws TsabException {
-
-    Session sess = HibernateUtil.getSessionFactory().openSession();
-    Transaction tx = sess.beginTransaction();
-    try {
-      try {
-        return sess.createCriteria(TranscriptionFragment.class).add(Restrictions.eq("transcription", current))
-            .addOrder(Order.asc("time")).list();
-      } finally {
-        tx.commit();
-      }
-    } catch (Exception e) {
-      try {
-        tx.rollback();
-      } finally {
-        throw new TsabException("Failed to find transcription fragments (speech) for transcription '" + current + "'",
-            e);
-      }
-    }
-
+    return getTranscriptionFragments(current, null);
   }
 
   public List<TranscriptionTopic> getTranscriptionTopics(Transcription current) throws TsabException {
@@ -131,8 +117,7 @@ public class TsabDao {
       try {
         tx.rollback();
       } finally {
-        throw new TsabException("Failed to find transcription topics for transcription '" + current + "'",
-            e);
+        throw new TsabException("Failed to find transcription topics for transcription '" + current + "'", e);
       }
     }
 
@@ -202,18 +187,17 @@ public class TsabDao {
       while (fit.hasNext()) {
         TranscriptionFragment transcriptionFragment = (TranscriptionFragment) fit.next();
         transcriptionFragment.setTranscription(newt);
-        
+
         TranscriptionTopic topic = topicMap.get(transcriptionFragment.getTransientTopicId());
-        if (topic!=null && topic.getTime()==null) {
+        if (topic != null && topic.getTime() == null) {
           topic.setTime(transcriptionFragment.getTime());
           sess.update(topic);
         }
-        
+
         transcriptionFragment.setTopic(topic);
-        
+
         sess.save(transcriptionFragment);
       }
-
 
       tx.commit();
       return newt;
@@ -808,8 +792,8 @@ public class TsabDao {
     try {
 
       try {
-        return sess.createCriteria(Transcription.class).setMaxResults(maxResults)
-            .addOrder(Order.desc("recorded")).list();
+        return sess.createCriteria(Transcription.class).setMaxResults(maxResults).addOrder(Order.desc("recorded"))
+            .list();
       } finally {
         tx.commit();
       }
@@ -825,4 +809,317 @@ public class TsabDao {
     }
   }
 
+  public User fetchUser(String email, String fullName) throws TsabException {
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+
+      try {
+        List<User> users = sess.createCriteria(User.class).add(Restrictions.ilike("email", email)).list();
+        if (users.size() > 1) {
+          throw new TsabException("Inconsistent user database, more than one record found for email " + email + "!");
+        }
+        Iterator<User> it = users.iterator();
+        if (it.hasNext()) {
+          User user = it.next();
+
+          //if full name was not available before and not available now.
+          if (user.getFullName() == null && fullName == null) {
+            return user;
+          }
+
+          // Unlikely but check if user has changed his/her name
+          if (user.getFullName() != null && user.getFullName().equalsIgnoreCase(fullName)) {
+            log.debug("Found user " + email + " from tsab database: " + user.getId());
+            return user;
+          }
+
+          // name-change
+          user.setFullName(fullName);
+          sess.update(user);
+          sess.flush();
+          log.debug("Found user " + email + " from tsab database and updated full name to: " + fullName + "; id:"
+              + user.getId());
+          return user;
+        }
+
+        // New user
+        User user = new User();
+        user.setEmail(email);
+        user.setFullName(fullName);
+
+        String hardCodedSuperUser = System.getProperty("TSAB.SUPERUSER");
+        if (hardCodedSuperUser != null && email.equalsIgnoreCase(hardCodedSuperUser)) {
+          // Hardcoded super user first-time login. Grant super-user rights
+          user.setRole(Classifiers.USER_ROLE_SUPER);
+        } else {
+          user.setRole(Classifiers.USER_ROLE_REGULAR);
+        }
+
+        sess.save(user);
+        sess.flush();
+        log.debug("User " + email + " is new to tsab, registering. Assigning id: " + user.getId());
+        return user;
+      } finally {
+        tx.commit();
+      }
+
+    } catch (Exception e) {
+
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to fetch user for e-mail:" + email + "; fullname:" + fullName, e);
+      }
+
+    }
+  }
+
+  public List<TranscriptionFragmentCorrection> getPendingCorrections() throws TsabException {
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+
+      try {
+        List<TranscriptionFragmentCorrection> corrections = sess.createCriteria(TranscriptionFragmentCorrection.class)
+            .add(Restrictions.ilike("state", Classifiers.CORRECTION_STATE_PENDING)).addOrder(Order.asc("submissionDate")).list();
+        return corrections;
+      } finally {
+        tx.commit();
+      }
+
+    } catch (Exception e) {
+
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to find pending corrections!", e);
+      }
+
+    }
+  }
+
+
+  public List<User> getRegisteredUsers() throws TsabException {
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+
+      try {
+        List<User> users = sess.createCriteria(User.class).addOrder(Order.asc("role")).addOrder(Order.asc("email"))
+            .list();
+        return users;
+      } finally {
+        tx.commit();
+      }
+
+    } catch (Exception e) {
+
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to find registered users!", e);
+      }
+    }
+  }
+
+  public void setUserRole(String userIdStr, String newRole) throws TsabException {
+    Long userId = new Long(userIdStr);
+
+    if (!newRole.equals(Classifiers.USER_ROLE_POWER) && !newRole.equals(Classifiers.USER_ROLE_REGULAR)
+        && !newRole.equals(Classifiers.USER_ROLE_SUPER)) {
+      throw new TsabException("Requested role type '" + newRole + "' does not exist!");
+    }
+
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+
+      try {
+        User user = (User) sess.get(User.class, userId);
+        user.setRole(newRole);
+        sess.update(user);
+        return;
+      } finally {
+        tx.commit();
+      }
+
+    } catch (Exception e) {
+
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to find registered users!", e);
+      }
+    }
+  }
+
+  public List<TranscriptionFragment> getTranscriptionFragments(Transcription current, User user) throws TsabException {
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+      try {
+        List<TranscriptionFragment> fragments = sess.createCriteria(TranscriptionFragment.class)
+            .add(Restrictions.eq("transcription", current)).addOrder(Order.asc("time")).list();
+
+        if (user != null) {
+          //Load user corrections for this transcription
+          Criteria crit = sess.createCriteria(TranscriptionFragmentCorrection.class);
+          crit = crit.createAlias("fragment.transcription", "fragtra");
+
+          // Include only pending corrections. Accepted are already merged and rejected should not be visible.
+          List<TranscriptionFragmentCorrection> corrections = crit.add(Restrictions.eq("fragtra.id", current.getId()))
+              .add(Restrictions.eq("user", user)).add(Restrictions.eq("state",Classifiers.CORRECTION_STATE_PENDING)).list();
+
+          // "Patch" fragments
+          Map<Long, String> map = new HashMap<Long, String>();
+          Iterator<TranscriptionFragmentCorrection> it = corrections.iterator();
+          while (it.hasNext()) {
+            TranscriptionFragmentCorrection corr = (TranscriptionFragmentCorrection) it.next();
+            log.debug("Adding user-specific correction for fragmentId:"+corr.getFragment().getId());
+            map.put(corr.getFragment().getId(), corr.getText());
+          }
+
+          Iterator<TranscriptionFragment> fit = fragments.iterator();
+          while (fit.hasNext()) {
+            TranscriptionFragment frag = (TranscriptionFragment) fit.next();
+            if (map.containsKey(frag.getId())) {
+              frag.setText(map.get(frag.getId()));
+            }
+          }
+
+        }
+
+        return fragments;
+      } finally {
+        tx.commit();
+      }
+    } catch (Exception e) {
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to find transcription fragments (speech) for transcription '" + current + "'",
+            e);
+      }
+    }
+  }
+
+  public void submitCorrection(User user, Long tranid, Long time, String text) throws TsabException {
+    if (user == null) {
+      throw new TsabException("User not authenticated, not accepting correction!");
+    }
+
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+      try {
+
+        // Find matching fragment
+        List<TranscriptionFragment> fragments = sess.createCriteria(TranscriptionFragment.class)
+            .add(Restrictions.eq("transcription.id", tranid)).add(Restrictions.eq("time", time)).list();
+
+        if (fragments.size() != 1) {
+          throw new TsabException("Unexpected size for the given transcription search result! size=" + fragments.size()
+              + "; tranid=" + tranid + "; time=" + time);
+        }
+
+        TranscriptionFragment fragment = fragments.iterator().next();
+
+        if (fragment.getOriginalText() == null) {
+          //uninitialized original text field. Let's update even if correction is not auto-applied
+          fragment.setOriginalText(fragment.getText());
+        }
+
+        TranscriptionFragmentCorrection corr = new TranscriptionFragmentCorrection();
+        corr.setFragment(fragment);
+        corr.setState(Classifiers.CORRECTION_STATE_PENDING);
+        corr.setSubmissionDate(new Date());
+        corr.setText(text);
+        corr.setUser(user);
+        
+        log.debug("User in role "+user.getRole());
+        
+        // if user is power or super then apply change right away. also store correction as accepted correction entry for statistical analysis
+        if (Classifiers.USER_ROLE_POWER.equals(user.getRole()) || Classifiers.USER_ROLE_SUPER.equals(user.getRole())) {
+          fragment.setText(text);
+          corr.setState(Classifiers.CORRECTION_STATE_ACCEPTED);
+        }
+        sess.update(fragment);
+        sess.saveOrUpdate(corr);
+        sess.flush();
+        
+        log.debug("Correction from user "+user.getEmail()+" successfully registered for transcription "+tranid+" at time "+time+" with state "+corr.getState());
+        
+        return;
+      } finally {
+        tx.commit();
+      }
+    } catch (Exception e) {
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to submit correction for tranid:" + tranid + " at time "+time,
+            e);
+      }
+    }
+
+  }
+
+  public void acceptCorrection(Long corrId) throws TsabException {
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+      try {
+        TranscriptionFragmentCorrection corr = (TranscriptionFragmentCorrection) sess.get(TranscriptionFragmentCorrection.class, corrId);
+        corr.setState(Classifiers.CORRECTION_STATE_ACCEPTED);
+        
+        if (corr.getFragment().getOriginalText()==null) {
+          corr.getFragment().setOriginalText(corr.getFragment().getText());
+        }
+        
+        corr.getFragment().setText(corr.getText());
+        sess.update(corr);
+        sess.update(corr.getFragment());
+        sess.flush();
+        
+        return;
+      } finally {
+        tx.commit();
+      }
+    } catch (Exception e) {
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to accept correction id:" + corrId,
+            e);
+      }
+    }
+ 
+  }
+
+  public void rejectCorrection(Long corrId) throws TsabException {
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+      try {
+        TranscriptionFragmentCorrection corr = (TranscriptionFragmentCorrection) sess.get(TranscriptionFragmentCorrection.class, corrId);
+        corr.setState(Classifiers.CORRECTION_STATE_REJECTED);        
+        sess.update(corr);
+        sess.flush();
+        
+        return;
+      } finally {
+        tx.commit();
+      }
+    } catch (Exception e) {
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to accept correction id:" + corrId,
+            e);
+      }
+    }
+ 
+  }
+  
 }
