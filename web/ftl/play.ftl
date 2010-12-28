@@ -124,8 +124,7 @@ Event.observe(window, 'load', function() {
 				
 				line = jQuery('#edit_line').val();				
 				newtext = jQuery('#edit_textarea').val();
-
-				$('line_'+line).innerHTML = newtext;
+				
 				editSpeechLine(line, newtext);
 				
 				//submit contribution to server

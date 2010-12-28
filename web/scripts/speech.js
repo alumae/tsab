@@ -502,7 +502,11 @@ var playNextIfTime = function(currentSound) {
  	}
  }
  
- var editSpeechLine = function(i, newtext) {
+ var editSpeechLine = function(i, newtext) { 	
  	speech[i][2]=newtext;
+ 	 
+	sameone = (i>0 && speech[i][0]==speech[i-1][0]);
+	line = ( !sameone ? "<strong>"+speech[i][0]+":</strong> " : "")+speech[i][2];
+ 	$('line_'+i).innerHTML = line;
  }
  
