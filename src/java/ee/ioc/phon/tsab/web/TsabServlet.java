@@ -148,7 +148,7 @@ public class TsabServlet extends FreemarkerServlet {
           topicSeq++;
           topicSet.add(t.getTopicId());
         }
-
+      
         f.setTransientTopicSeq(t == null ? 0 : topicSeq);
         f.setTransientTopicDesc(t == null ? "" : t.getTopicName());
       }
@@ -296,6 +296,8 @@ public class TsabServlet extends FreemarkerServlet {
 
         if (t != null) {
           t.setTransientSeq(++seq);
+        } else {
+          t.setTransientSeq(0);
         }
 
       }

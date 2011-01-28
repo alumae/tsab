@@ -351,7 +351,7 @@ var newSpeech = function() {
 		
 		sameone = (i>0 && speech[i][0]==speech[i-1][0]);
 		
-		lines += "<div class='topic topic_"+speech[i][3]+"' title='"+speech[i][4]+"' >"+ 
+		lines += "<div class='topic topic_"+(parseInt(speech[i][3]))+"' title='"+speech[i][4]+"' >"+ 
 				"<div class='speaker speaker_"+speakers[speech[i][0]]+"' id='linetop_"+i+"' >"+
 				"<div class='line"+(sameone?" sameone":"")+"' id='line_"+i+"' onclick='seekLine("+i+"); return false;'>"+
 					( !sameone ? "<strong>"+speech[i][0]+":</strong> " : "")+
@@ -368,6 +368,15 @@ var newSpeech = function() {
 		doScroll = true;  
 	});  
 	
+	// Apply in-place editing (TODO only when edit mode active!)
+	/*for(i = 0; i < speech.length; i++)
+	{
+		$("line_"+i).editInPlace({
+		    url: "http://localhost",
+		    params: "name=sample"
+		});
+	}
+	*/
 }
 
 var searchPlaying = -1;

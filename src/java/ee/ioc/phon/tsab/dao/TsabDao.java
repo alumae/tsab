@@ -167,37 +167,7 @@ public class TsabDao {
 
       sess.saveOrUpdate(newt.getCategory());
 
-      Map<String, TranscriptionTopic> topicMap = new HashMap<String, TranscriptionTopic>();
-
-      Iterator<Entry<String, String>> topicIter = topics.entrySet().iterator();
-      while (topicIter.hasNext()) {
-        Map.Entry<java.lang.String, java.lang.String> t = (Map.Entry<java.lang.String, java.lang.String>) topicIter
-            .next();
-        String topicId = t.getKey();
-        String topicDesc = t.getValue();
-        TranscriptionTopic tt = new TranscriptionTopic();
-        tt.setTopicId(topicId);
-        tt.setTopicName(topicDesc);
-        tt.setTranscription(newt);
-        sess.save(tt);
-        topicMap.put(topicId, tt);
-      }
-
-      Iterator<TranscriptionFragment> fit = fragments.iterator();
-      while (fit.hasNext()) {
-        TranscriptionFragment transcriptionFragment = (TranscriptionFragment) fit.next();
-        transcriptionFragment.setTranscription(newt);
-
-        TranscriptionTopic topic = topicMap.get(transcriptionFragment.getTransientTopicId());
-        if (topic != null && topic.getTime() == null) {
-          topic.setTime(transcriptionFragment.getTime());
-          sess.update(topic);
-        }
-
-        transcriptionFragment.setTopic(topic);
-
-        sess.save(transcriptionFragment);
-      }
+      persistTopicsAndFragments(newt, fragments, topics, sess);
 
       tx.commit();
       return newt;
@@ -211,18 +181,50 @@ public class TsabDao {
     }
   }
 
-  public Transcription addFragments(Transcription newt, List<TranscriptionFragment> fragments) throws TsabException {
+  private void persistTopicsAndFragments(Transcription newt, List<TranscriptionFragment> fragments,
+      Hashtable<String, String> topics, Session sess) {
+    Map<String, TranscriptionTopic> topicMap = new HashMap<String, TranscriptionTopic>();
+
+    Iterator<Entry<String, String>> topicIter = topics.entrySet().iterator();
+    while (topicIter.hasNext()) {
+      Map.Entry<java.lang.String, java.lang.String> t = (Map.Entry<java.lang.String, java.lang.String>) topicIter
+          .next();
+      String topicId = t.getKey();
+      String topicDesc = t.getValue();
+      TranscriptionTopic tt = new TranscriptionTopic();
+      tt.setTopicId(topicId);
+      tt.setTopicName(topicDesc);
+      tt.setTranscription(newt);
+      sess.save(tt);
+      topicMap.put(topicId, tt);
+    }
+
+    Iterator<TranscriptionFragment> fit = fragments.iterator();
+    while (fit.hasNext()) {
+      TranscriptionFragment transcriptionFragment = (TranscriptionFragment) fit.next();
+      transcriptionFragment.setTranscription(newt);
+
+      TranscriptionTopic topic = topicMap.get(transcriptionFragment.getTransientTopicId());
+      if (topic != null && topic.getTime() == null) {
+        topic.setTime(transcriptionFragment.getTime()!=null?transcriptionFragment.getTime():0L);
+        sess.update(topic);
+      }
+
+      transcriptionFragment.setTopic(topic);
+
+      sess.save(transcriptionFragment);
+    }
+  }
+
+
+  public Transcription addFragmentsAndTopics(Transcription newt, List<TranscriptionFragment> fragments,
+      Hashtable<String, String> topics) throws TsabException {
     Session sess = HibernateUtil.getSessionFactory().openSession();
     Transaction tx = sess.beginTransaction();
     try {
 
-      Iterator<TranscriptionFragment> fit = fragments.iterator();
-      while (fit.hasNext()) {
-        TranscriptionFragment transcriptionFragment = (TranscriptionFragment) fit.next();
-        transcriptionFragment.setTranscription(newt);
-        sess.save(transcriptionFragment);
-      }
-
+      persistTopicsAndFragments(newt, fragments, topics, sess);
+        
       tx.commit();
       return newt;
     } catch (Exception e) {
@@ -420,7 +422,7 @@ public class TsabDao {
     try {
       sess = HibernateUtil.getSessionFactory().openSession();
 
-      for (int i = 0; i < hits.totalHits; i++) {
+      for (int i = 0; i < Math.min(hits.totalHits, hits.scoreDocs.length); i++) {
 
         Document doc;
         try {
@@ -882,7 +884,8 @@ public class TsabDao {
 
       try {
         List<TranscriptionFragmentCorrection> corrections = sess.createCriteria(TranscriptionFragmentCorrection.class)
-            .add(Restrictions.ilike("state", Classifiers.CORRECTION_STATE_PENDING)).addOrder(Order.asc("submissionDate")).list();
+            .add(Restrictions.ilike("state", Classifiers.CORRECTION_STATE_PENDING))
+            .addOrder(Order.asc("submissionDate")).list();
         return corrections;
       } finally {
         tx.commit();
@@ -898,7 +901,6 @@ public class TsabDao {
 
     }
   }
-
 
   public List<User> getRegisteredUsers() throws TsabException {
     Session sess = HibernateUtil.getSessionFactory().openSession();
@@ -969,14 +971,15 @@ public class TsabDao {
 
           // Include only pending corrections. Accepted are already merged and rejected should not be visible.
           List<TranscriptionFragmentCorrection> corrections = crit.add(Restrictions.eq("fragtra.id", current.getId()))
-              .add(Restrictions.eq("user", user)).add(Restrictions.eq("state",Classifiers.CORRECTION_STATE_PENDING)).list();
+              .add(Restrictions.eq("user", user)).add(Restrictions.eq("state", Classifiers.CORRECTION_STATE_PENDING))
+              .list();
 
           // "Patch" fragments
           Map<Long, String> map = new HashMap<Long, String>();
           Iterator<TranscriptionFragmentCorrection> it = corrections.iterator();
           while (it.hasNext()) {
             TranscriptionFragmentCorrection corr = (TranscriptionFragmentCorrection) it.next();
-            log.debug("Adding user-specific correction for fragmentId:"+corr.getFragment().getId());
+            log.debug("Adding user-specific correction for fragmentId:" + corr.getFragment().getId());
             map.put(corr.getFragment().getId(), corr.getText());
           }
 
@@ -1036,9 +1039,9 @@ public class TsabDao {
         corr.setSubmissionDate(new Date());
         corr.setText(text);
         corr.setUser(user);
-        
-        log.debug("User in role "+user.getRole());
-        
+
+        log.debug("User in role " + user.getRole());
+
         // if user is power or super then apply change right away. also store correction as accepted correction entry for statistical analysis
         if (Classifiers.USER_ROLE_POWER.equals(user.getRole()) || Classifiers.USER_ROLE_SUPER.equals(user.getRole())) {
           fragment.setText(text);
@@ -1047,9 +1050,10 @@ public class TsabDao {
         sess.update(fragment);
         sess.saveOrUpdate(corr);
         sess.flush();
-        
-        log.debug("Correction from user "+user.getEmail()+" successfully registered for transcription "+tranid+" at time "+time+" with state "+corr.getState());
-        
+
+        log.debug("Correction from user " + user.getEmail() + " successfully registered for transcription " + tranid
+            + " at time " + time + " with state " + corr.getState());
+
         return;
       } finally {
         tx.commit();
@@ -1058,8 +1062,7 @@ public class TsabDao {
       try {
         tx.rollback();
       } finally {
-        throw new TsabException("Failed to submit correction for tranid:" + tranid + " at time "+time,
-            e);
+        throw new TsabException("Failed to submit correction for tranid:" + tranid + " at time " + time, e);
       }
     }
 
@@ -1070,18 +1073,19 @@ public class TsabDao {
     Transaction tx = sess.beginTransaction();
     try {
       try {
-        TranscriptionFragmentCorrection corr = (TranscriptionFragmentCorrection) sess.get(TranscriptionFragmentCorrection.class, corrId);
+        TranscriptionFragmentCorrection corr = (TranscriptionFragmentCorrection) sess.get(
+            TranscriptionFragmentCorrection.class, corrId);
         corr.setState(Classifiers.CORRECTION_STATE_ACCEPTED);
-        
-        if (corr.getFragment().getOriginalText()==null) {
+
+        if (corr.getFragment().getOriginalText() == null) {
           corr.getFragment().setOriginalText(corr.getFragment().getText());
         }
-        
+
         corr.getFragment().setText(corr.getText());
         sess.update(corr);
         sess.update(corr.getFragment());
         sess.flush();
-        
+
         return;
       } finally {
         tx.commit();
@@ -1090,11 +1094,10 @@ public class TsabDao {
       try {
         tx.rollback();
       } finally {
-        throw new TsabException("Failed to accept correction id:" + corrId,
-            e);
+        throw new TsabException("Failed to accept correction id:" + corrId, e);
       }
     }
- 
+
   }
 
   public void rejectCorrection(Long corrId) throws TsabException {
@@ -1102,11 +1105,12 @@ public class TsabDao {
     Transaction tx = sess.beginTransaction();
     try {
       try {
-        TranscriptionFragmentCorrection corr = (TranscriptionFragmentCorrection) sess.get(TranscriptionFragmentCorrection.class, corrId);
-        corr.setState(Classifiers.CORRECTION_STATE_REJECTED);        
+        TranscriptionFragmentCorrection corr = (TranscriptionFragmentCorrection) sess.get(
+            TranscriptionFragmentCorrection.class, corrId);
+        corr.setState(Classifiers.CORRECTION_STATE_REJECTED);
         sess.update(corr);
         sess.flush();
-        
+
         return;
       } finally {
         tx.commit();
@@ -1115,11 +1119,32 @@ public class TsabDao {
       try {
         tx.rollback();
       } finally {
-        throw new TsabException("Failed to accept correction id:" + corrId,
-            e);
+        throw new TsabException("Failed to accept correction id:" + corrId, e);
       }
     }
- 
+
   }
-  
+
+  public void deleteTopics(Transcription newt) throws TsabException {
+    Session sess = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = sess.beginTransaction();
+    try {
+
+      Iterator it = sess.createCriteria(TranscriptionTopic.class).add(Restrictions.eq("transcription", newt)).list()
+          .iterator();
+      while (it.hasNext()) {
+        TranscriptionTopic topic = (TranscriptionTopic) it.next();
+        sess.delete(topic);
+      }
+
+      tx.commit();
+    } catch (Exception e) {
+      try {
+        tx.rollback();
+      } finally {
+        throw new TsabException("Failed to delete topics for transcription'" + newt.getId() + "'", e);
+      }
+    }
+  }
+
 }

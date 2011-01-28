@@ -6,6 +6,7 @@
 <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.7.custom.css" rel="stylesheet" />	
 <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui-1.8.7.custom.min.js"></script>
+<!-- <script type="text/javascript" src="../js/jquery.editinplace.js"></script> -->
 
 <script type="text/javascript">
 jQuery.noConflict();
@@ -33,8 +34,8 @@ soundManager.debugMode = true;
 var playCount = ${playCount};
 var playLength = ${playLength}; // in seconds
 
-var loc_corr_edit = '${loc.play_correction_edit}';
-var loc_corr_stop_edit = '${loc.play_correction_stop_edit}';
+//var loc_corr_edit = '${loc.play_correction_edit}';
+//var loc_corr_stop_edit = '${loc.play_correction_stop_edit}';
 
 </script>
 
@@ -64,7 +65,7 @@ ${loc.trans_untitled}
 <#if topics?exists>
 	<p><b>${loc.topics}</b></br/>
 	<#list topics as topic>
-		<div class="topic_nav topic_${topic.transientSeq}" style="cursor:pointer;" onclick="javascript:seekPosition(<#if topic.time?exists>${topic.time}<#else>0</#if>);"><#if topic.transientTimeStr?exists>${topic.transientTimeStr}<#else>-</#if> <span class="topic_name">${topic.topicName}</span></div>
+		<div class="topic_nav topic_${topic.transientSeq}" style="cursor:pointer;" onclick="javascript:seekPosition(<#if topic.time?exists>${topic.time}<#else>0</#if>);"><#if topic.transientTimeStr?exists>${topic.transientTimeStr}<#else>00:00</#if> <span class="topic_name">${topic.topicName}</span></div>
 	</#list>
 	</p>
 </#if>
@@ -101,7 +102,7 @@ Event.observe(window, 'load', function() {
 
 	loadAudio("${ctxpath}", speech, true);
 	
-	$('position').innerHTML = toTime(0)+" / "+toTime(playLength*1000);
+	$('position').innerHTML = toTime(0)+" / "+toTime(playLength*1000);	
 
 	var editToggle = false;
 	
@@ -149,12 +150,14 @@ Event.observe(window, 'load', function() {
 
 <p>${loc.play_count}: <#if transcription.viewCount?exists>${transcription.viewCount}</#if><br/>
 
+<!--
 <#if tsabuser?exists><a href="javascript:donothing();" onclick="javascript:toggleEdit();"><span id="editLink">
 ${loc.play_correction_edit}
 </span></a>
 <#else>
 ${loc.play_correction_login_required}
 </#if>
+-->
 </p>
 
 <#if relatedRecordings?exists>
