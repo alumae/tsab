@@ -1,6 +1,7 @@
 <Context>
 <Environment name="TSAB.HOME" value="E:/tsab/tsabgit/target/tsabtesthome" type="java.lang.String" override="false"/>
 <Environment name="TSAB.DB.USERNAME" value="tsab" type="java.lang.String" override="false"/>
-<Environment name="TSAB.DB.PASSWORD" value="change_to_db_password" type="java.lang.String" override="false"/>
+<Environment name="TSAB.DB.PASSWORD" value="f09Flca" type="java.lang.String" override="false"/>
 <Environment name="TSAB.DB.HOST" value="localhost:3306/tsab" type="java.lang.String" override="false"/>
+<Environment name="TSAB.SUPERUSER" value="ahti.kitsik@gmail.com" type="java.lang.String" override="false"/>
 </Context>

@@ -16,6 +16,14 @@ var latestFrag = -1;
 
 var editEnabled = false;
 
+var stopNextFragmentActive=false;
+
+var currentGlobalPosition = 0;
+
+var clipAdjust = 300; //in ms, used to compensate some of the lags for seekline start and stop times. experimental property.
+
+var playJustFragment=false;
+
 var createAudio = function(filename, autoplay) {
 
 	soundManager.onready(function() {
@@ -52,6 +60,8 @@ var createAudio = function(filename, autoplay) {
 	
 					var myid = parseInt(this.sID.split("_")[1]);
 					
+					currentGlobalPosition = this.position+fragmult;
+					
 					if (latestFrag!=myid) {
 						condpause(this);
 					}
@@ -72,13 +82,21 @@ var createAudio = function(filename, autoplay) {
 					
 					var fragmult = (myid-1)*60*1000; 
 					
-					if(activeLine < speech.length -1 && (this.position+fragmult) >= speech[activeLine+1][1]) {
-						
-						setLine(activeLine + 1);
-						
-						if(doScroll == true) {
-							scrollToView(activeLine + 1);
+					//adding also 1000ms preemptive measure to try to move to the next fragment as closely as possible
+					if(activeLine < speech.length -1 && (this.position+fragmult+clipAdjust) >= speech[activeLine+1][1]) {
+					
+						if (editEnabled==false && playJustFragment!=true) {
+							setLine(activeLine + 1);
+							
+							if(doScroll == true) {
+								scrollToView(activeLine + 1);
+							}
+						} else {
+							playJustFragment=false;
+							// When editing is enabled, pause after each fragment
+							pauseIt();
 						}
+						
 					}
 					
 					//playNextIfTime(this);
@@ -124,6 +142,11 @@ var loadAudio = function(ctxpath, name, autoplay) {
 		    newSpeech();
 		 	
 		    createAudio(json['file'], autoplay);
+		    
+		    initInPlaceEditing(transcriptionId);
+		    
+		    initShortcuts();
+		    
 		}
 	});
 	
@@ -166,6 +189,35 @@ var moveBar = function(fragNo, current) {
 }
 
 
+var togglePlay = function() {
+	var fragment = Math.floor(curPos/60000)+1;
+	latestFrag = fragment;
+		
+	var sound = soundManager.getSoundById('speech_'+fragment); // predefined/preloaded sound
+	
+	var isPlaying = sound.playState==1;
+	
+	var newState = !isPlaying;
+	
+	soundManager.stopAll();
+	if (newState==false) {		
+		return false;
+	}
+	
+	condload(sound);
+	
+	var soundPos = curPos - (fragment-1)*60000;
+	zlog('Setting playIt position to '+soundPos+'. Sound duration:'+sound.duration+'. ReadyState:'+sound.readyState);
+
+	sound.play();
+	sound.setPosition(soundPos);
+	
+	//var realpos = (currentSpeechNo-1)*60*1000 + sound.position;
+	
+	setLine(findLine(curPos));
+	
+	return false;
+}
 
 var playIt = function() {
 	
@@ -222,18 +274,26 @@ var findLine = function(time) {
 
 var seekLine = function(i) {
 
-	var pos = speech[i][1];	
-
-	if (editEnabled==true) {
-		editToggle = false;
-		jQuery('#edit_textarea').val(speech[i][2]);
-		jQuery('#edit_line').val(i);
-		jQuery('#edit_time').val(pos);		
-		jQuery('#editdialog').dialog('open');		
-		return;
-	}
+	//var pos = speech[i][1];	
 
 	playLine(i);
+	
+	//if (editEnabled==true) {
+	//	editToggle = false;
+		//jQuery('#edit_textarea').val(speech[i][2]);
+		//jQuery('#edit_line').val(i);
+		//jQuery('#edit_time').val(pos);
+		
+		//window.alert("Activating edit for line "+i);
+		
+
+		//window.alert("done.");
+		// jQuery('#editdialog').dialog('open');
+		
+	//	return;
+	//} else {
+	//	playLine(i);	
+	//}
 
 }
 
@@ -251,7 +311,7 @@ var playLine = function(i) {
 	//var soundToPause = soundManager.getSoundById('speech_'+currentSpeechNo);	
 	soundManager.stopAll();
 	
-	var newpos = pos-((fragmult-1)*1000*60);
+	var newpos = pos-((fragmult-1)*1000*60)-clipAdjust;
 	//alert('fragmult:'+fragmult+'; newpos:'+newpos);
 	
 	latestFrag = fragmult;
@@ -355,8 +415,8 @@ var newSpeech = function() {
 				"<div class='speaker speaker_"+speakers[speech[i][0]]+"' id='linetop_"+i+"' >"+
 				"<div class='line"+(sameone?" sameone":"")+"' id='line_"+i+"' onclick='seekLine("+i+"); return false;'>"+
 					( !sameone ? "<strong>"+speech[i][0]+":</strong> " : "")+
-					speech[i][2]+
-				"</div></div></div>";
+					"<div class='linecontent' id='linecontent_"+i+"'>"+speech[i][2]+
+				"</div></div></div></div>";
 	}
 	$('lines').innerHTML = lines;
 	
@@ -367,16 +427,8 @@ var newSpeech = function() {
 	Event.observe($("lines"), 'mouseout', function() {  
 		doScroll = true;  
 	});  
+
 	
-	// Apply in-place editing (TODO only when edit mode active!)
-	/*for(i = 0; i < speech.length; i++)
-	{
-		$("line_"+i).editInPlace({
-		    url: "http://localhost",
-		    params: "name=sample"
-		});
-	}
-	*/
 }
 
 var searchPlaying = -1;
@@ -515,7 +567,83 @@ var playNextIfTime = function(currentSound) {
  	speech[i][2]=newtext;
  	 
 	sameone = (i>0 && speech[i][0]==speech[i-1][0]);
-	line = ( !sameone ? "<strong>"+speech[i][0]+":</strong> " : "")+speech[i][2];
+	line = ( !sameone ? "<strong>"+speech[i][0]+":</strong> " : "")+
+	"<div class='linecontent' id='linecontent_"+i+"'>"+speech[i][2]+"</div>";
  	$('line_'+i).innerHTML = line;
  }
  
+
+var initInPlaceEditing = function (transid) {
+	//window.alert("initing in-place for transid "+transid+"; speech="+speech.length);
+	
+	// Apply in-place editing (TODO only when edit mode active!)
+	for(i = 0; i < speech.length; i++)	
+	{
+		//var timepos = speech[i][1];
+		//var paramstr = 'tranid='+transid+'&time='+timepos+'&newtext='+encodeURIComponent('aaaa');
+		
+		//window.alert('paramstr:'+paramstr);
+		
+		jQuery('#linecontent_'+i).editInPlace({
+		    url: ctxpath+'/p/submitcorrection',
+		    params: 'tranid=30&time='+speech[i][1],//+'&newtext='+encodeURIComponent('aaaa')//,
+		    field_type: 'textarea',
+		    textarea_cols: 60,
+		    textarea_rows: 3,
+		    saving_text: loc_corr_saving,
+		    value_requred: true,
+		    hover_class: 'edit_hover',
+		    success: function() {
+		    	editSpeechLine(i, jQuery('#linecontent_'+i).innerHTML);
+		    },
+		    preinit: function() {
+		    	setLine(i);
+		    	//soundManager.stopAll();
+		    	stopNextFragmentActive=true;
+		    },
+		    preinit: function() {
+		    	//window.alert("Enabled? "+editEnabled);
+		    	return userExists && editEnabled;
+	    	}
+		});
+
+	}
+}	
+
+function doRewind() {
+	seekPosition(curPos-500);
+	return false;
+}
+
+function doForward() {
+	seekPosition(curPos+500);
+	return false;
+}
+
+function replayFragment() {
+	pauseIt();
+	playJustFragment=true;
+	playLine(activeLine);
+	return false;	
+}
+
+var initShortcuts = function () {
+	
+	if (userExists) {
+		jQuery(document).bind('keypress', 't', togglePlay);		
+		jQuery(document).bind('keypress', 'tab', togglePlay);
+		
+		jQuery(document).bind('keypress', 'a', replayFragment);
+		jQuery(document).bind('keypress', 'Shift+tab', replayFragment);
+		
+		jQuery(document).bind('keypress', 's', pauseIt);
+		jQuery(document).bind('keypress', 'p', playIt);
+		jQuery(document).bind('keypress', 'r', doRewind);
+		jQuery(document).bind('keypress', 'f', doForward);
+
+		jQuery(document).bind('keypress', 'left', doRewind);
+		jQuery(document).bind('keypress', 'right', doForward);
+
+	}
+	
+}

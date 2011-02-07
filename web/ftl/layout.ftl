@@ -55,14 +55,13 @@
 	<div id="page_navi" class="wrap">
 	  <div class="col-right">
 	    <ul id="nav">
-<!--		  <li class="page_item"><a href="account">
+		  <li class="page_item"><a href="account">
 		  <#if tsabuser?exists>
 		  	${tsabuser.fullName} (${tsabuser.email})
 		  <#else>
 		  	${loc.login}
 		  </#if>
-		  </a>
-		  -->
+		  </a>	
 	      <li class="page_item"><a href="about">${loc.about}</a>
 	      <li class="page_item last"><a href="mailto:${loc.email_address}">${loc.email}</a>
 	    </ul>

@@ -526,3 +526,24 @@ a.category:visited {
 	font-size:12px;
 	color:#666666;
 }
+
+.edit_hover {
+	color:#000000;
+	background-color: #c8d2d4;
+	margin:0px;
+	padding:0px;
+	display: inline;
+}
+
+.linecontent {
+	display: inline;
+	margin:0px;
+	padding:0px;
+}
+
+.inplace_form {
+	color: #000000;
+	font-family:Helvetica, Arial, sans-serif;
+	background-color: #CCCCCC;
+	border-right: #464646 1px solid;  
+}

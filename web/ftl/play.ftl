@@ -6,7 +6,8 @@
 <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.7.custom.css" rel="stylesheet" />	
 <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="../js/jquery-ui-1.8.7.custom.min.js"></script>
-<!-- <script type="text/javascript" src="../js/jquery.editinplace.js"></script> -->
+<script type="text/javascript" src="../js/jquery.editinplace.js"></script>
+<script type="text/javascript" src="../js/jquery.hotkeys-0.8.js"></script>
 
 <script type="text/javascript">
 jQuery.noConflict();
@@ -34,8 +35,14 @@ soundManager.debugMode = true;
 var playCount = ${playCount};
 var playLength = ${playLength}; // in seconds
 
-//var loc_corr_edit = '${loc.play_correction_edit}';
-//var loc_corr_stop_edit = '${loc.play_correction_stop_edit}';
+var loc_corr_edit = '${loc.play_correction_edit}';
+var loc_corr_stop_edit = '${loc.play_correction_stop_edit}';
+
+var loc_corr_saving = '${loc.play_correction_saving}';
+
+var transcriptionId = ${transcription.id};
+
+var userExists = <#if tsabuser?exists>true<#else>false</#if>;
 
 </script>
 
@@ -98,9 +105,9 @@ $('seekbar').observe('mousedown', function(e) {
 
 Event.observe(window, 'load', function() {
 
-	var speech = '${transcription.id}';//gup('play');
+	var speechId = '${transcription.id}';//gup('play');
 
-	loadAudio("${ctxpath}", speech, true);
+	loadAudio("${ctxpath}", speechId, true);
 	
 	$('position').innerHTML = toTime(0)+" / "+toTime(playLength*1000);	
 
@@ -150,14 +157,13 @@ Event.observe(window, 'load', function() {
 
 <p>${loc.play_count}: <#if transcription.viewCount?exists>${transcription.viewCount}</#if><br/>
 
-<!--
 <#if tsabuser?exists><a href="javascript:donothing();" onclick="javascript:toggleEdit();"><span id="editLink">
 ${loc.play_correction_edit}
-</span></a>
+</span></a> ${loc.play_correction_legend}
 <#else>
 ${loc.play_correction_login_required}
 </#if>
--->
+
 </p>
 
 <#if relatedRecordings?exists>

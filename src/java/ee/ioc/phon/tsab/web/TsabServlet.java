@@ -5,6 +5,7 @@ import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -474,17 +475,29 @@ public class TsabServlet extends FreemarkerServlet {
     
     log.debug("request for correction; user:"+user);
     
+    log.debug("All parameters:");
+    
+    Enumeration namenum = request.getParameterNames();
+    while (namenum.hasMoreElements()) {
+      String name = (String) namenum.nextElement();
+      System.out.println("Name: "+name+"; value="+request.getParameter(name));
+    }
+
     Long tranid = new Long(request.getParameter("tranid"));
     Long time = new Long(request.getParameter("time"));
-    String text = request.getParameter("newtext");
+    String text = request.getParameter("update_value");//newtext
     
     log.debug(".. processing:" + tranid + ";" + time + ";" + text);
+    
     TsabDaoService.getDao().submitCorrection(user, tranid, time, text);
+    
+    request.setAttribute("newval", text);
+    
   }
 
   private void handleAccount(HttpServletRequest request, HttpServletResponse response) throws TsabException {
     String logout = request.getParameter("logout");
-
+    
     if (logout != null && "true".equals(logout)) {
       request.getSession().removeAttribute(ATTR_TSAB_USER);
       try {
