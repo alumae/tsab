@@ -8,7 +8,7 @@
 <#list recentlyAdded as row>
     <item>
       <title><#if row.title?exists>${row.title}<#else>Untitled</#if></title>
-      <link>${requestUrl}/play?trans=${row.id}</link>
+      <link>${ctxpath}/p/play?trans=${row.id}</link>
       <description>Click on the link to listen to the transcribed recording</description>
     </item>
 </#list>
