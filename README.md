@@ -6,7 +6,7 @@ speech files (e.g., radio shows or lectures).
 
 The application is described in:
 
-Tanel Alumäe and Ahti Kitsik. TSAB - web interface for transcribed speech collections. Interspeech 2011, Firenze, Italy. [pdf](https://phon.ioc.ee/dokuwiki/lib/exe/fetch.php?media=people:tanel:interspeech2011.pdf)
+Tanel Alumäe and Ahti Kitsik. TSAB - web interface for transcribed speech collections. Interspeech 2011, Firenze, Italy. [PDF](https://phon.ioc.ee/dokuwiki/lib/exe/fetch.php?media=people:tanel:interspeech2011.pdf)
 
 Demo
 ----
