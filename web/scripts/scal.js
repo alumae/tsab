@@ -148,7 +148,8 @@ scal.prototype = {
             return i;
         }.bind(this)).each(function(day,i) {
         var cell = new Element(this.table ? 'td' : 'div',{'class':'cal_day_name_'+ i});
-        cell.addClassName('daybox').addClassName('dayboxname').update(day.unescapeHTML().substr(0,this.options.dayheadlength));
+        shortDayName = day.match("^(?:(?:\&[^;]+;)|(?:[A-z])){1," + this.options.dayheadlength + "}")[0]
+        cell.addClassName('daybox').addClassName('dayboxname').update(shortDayName);
         if(i == 6) { cell.addClassName('endweek'); }
         weekbox.insert(cell);
         }.bind(this));
