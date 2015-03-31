@@ -125,9 +125,15 @@ public class Search {
         analyzer);
     try {
       query = qp.parse(queryString);
-
     } catch (ParseException e) {
-      throw new TsabException("Failed to parse query!", e);
+      query = null;
+    }
+    if(query == null) {
+      try {
+      	query= qp.parse(qp.escape(queryString));
+      } catch (ParseException e) {
+      	throw new TsabException("Failed to parse search query", e);         
+      }
     }
 
     return query;

@@ -494,7 +494,19 @@
 	    </fileset>
 	  </copy>
   </target>		
+
 	
+  <!-- Redeploy web stuff ONLY -->
+  <target name="redeploy-code" depends="compile">
+      <echo>=== DEPLOY classes ===</echo>
+      <!-- trying to be explicit about what i put out there -->
+      <copy todir="${catalina.home}/webapps/${app.path}/WEB-INF">
+        <fileset dir="${build.home}/WEB-INF">
+          <include name="lib/**"/>
+          <include name="classes/**"/>
+        </fileset>
+      </copy>
+  </target>     	
 	
 <!-- ==================== Reload Target =================================== -->
 

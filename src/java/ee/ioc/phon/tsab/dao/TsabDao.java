@@ -1,6 +1,7 @@
 package ee.ioc.phon.tsab.dao;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,12 +13,20 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.Searcher;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.highlight.Highlighter;
+import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
+import org.apache.lucene.search.highlight.NullFragmenter;
+import org.apache.lucene.search.highlight.QueryScorer;
 import org.apache.lucene.search.similar.MoreLikeThis;
+import org.apache.lucene.util.Version;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -394,6 +403,7 @@ public class TsabDao {
       throw new TsabException("Search query not specified!");
     }
 
+    
     String search2 = "";
 
     String[] qs = queryString.split(" ");
@@ -402,7 +412,7 @@ public class TsabDao {
       search2 += (search2.length() > 0 ? " " : "") + qq + "*";
     }
 
-    Query q = Search.getQuery(search2);
+    Query q = Search.getQuery(queryString);
     Searcher s = Search.getLuceneSearcher();
 
     TopDocs hits;
@@ -422,6 +432,11 @@ public class TsabDao {
     try {
       sess = HibernateUtil.getSessionFactory().openSession();
 
+      QueryScorer scorer = new QueryScorer(q);
+      Highlighter highlighter = new Highlighter(scorer);
+      highlighter.setTextFragmenter(new NullFragmenter());
+      Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_CURRENT);
+      
       for (int i = 0; i < Math.min(hits.totalHits, hits.scoreDocs.length); i++) {
 
         Document doc;
@@ -441,6 +456,8 @@ public class TsabDao {
         log.debug("Query hit title:" + title);
 
         String[] lines = content.split("\n");
+        
+        
         String results = "";
         int j = 0;
         int entrylines = 0;
@@ -453,23 +470,10 @@ public class TsabDao {
 
           j++;
 
-          String[] words = line.split(" ");
-
-          boolean include = false;
-
-          for (String word : words) {
-            for (String qq : qs) {
-              if (word.toLowerCase().startsWith(qq.toLowerCase())) {
-                include = true;
-                break;
-              }
-            }
-          }
-
-          if (include) {
+          TokenStream tokenStream = analyzer.tokenStream("contents", new StringReader(line));
+          String result = highlighter.getBestFragments(tokenStream, line, 5, "...");
+          if (result.length() > 0) {
             Long tid = new Long(uid);
-
-            //log.debug("Search match found for row "+(j-1));
 
             List<TranscriptionFragment> fraglist = sess.createCriteria(TranscriptionFragment.class)
                 .add(Restrictions.eq("transcription.id", tid)).addOrder(Order.asc("time")).list();
@@ -477,7 +481,7 @@ public class TsabDao {
 
             results += "<a href='javascript:donothing();' id='playbutton_" + playbuttons + "' onclick='playOneLine("
                 + playbuttons + "," + uid + ", " + frag.getTime() + ")'>CONTROL_PLAY</a> ..."
-                + Tools.toQueryResult(queryString, line) + "...<br/>";
+                + result + "...<br/>";
             playbuttons++;
             entrylines++;
           }
@@ -492,7 +496,13 @@ public class TsabDao {
         finalResult.append(results);
       }
 
-    } finally {
+    } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvalidTokenOffsetsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
       if (sess != null) {
         sess.close();
       }
