@@ -18,6 +18,7 @@ import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
+import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.Searcher;
 import org.apache.lucene.search.TopDocs;
@@ -506,6 +507,9 @@ public class TsabDao {
       if (sess != null) {
         sess.close();
       }
+      if (s != null) {
+      	Search.closeSearcher(s);
+      }
     }
 
     return finalResult.toString();
@@ -513,20 +517,22 @@ public class TsabDao {
 
   public String getRelatedRecordings(Long transId) throws TsabException {
     String code = transId.toString();
-
+    
     int doc = Search.getDocumentId(code);
 
     StringBuffer res = new StringBuffer();
-
-    MoreLikeThis mlt = new MoreLikeThis(Search.getLuceneReader());
+    
+    IndexReader luceneReader = Search.getLuceneReader();
+		MoreLikeThis mlt = new MoreLikeThis(luceneReader);
     mlt.setFieldNames(new String[] { "title", "category", "contents" });
     mlt.setMinWordLen(3);
     mlt.setBoost(true);
-
+    
+    Searcher s = null;
     try {
       Query q = mlt.like(doc);
 
-      Searcher s = Search.getLuceneSearcher();
+      s = Search.getLuceneSearcher();
 
       TopDocs hits = s.search(q, 5);
 
@@ -544,8 +550,16 @@ public class TsabDao {
           res.append("<a href='play?trans=" + uid + "'>" + title + "</a><br/>");
         }
       }
+      s.close();
     } catch (Exception e) {
       throw new TsabException("Failed to find related recordings!", e);
+    } finally {
+    	try {
+    		luceneReader.close();
+    		Search.closeSearcher(s);
+    	} catch (IOException e) {
+    		// silent OK
+    	}
     }
     return res.toString();
   }

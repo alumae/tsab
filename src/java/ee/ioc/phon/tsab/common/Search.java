@@ -90,9 +90,8 @@ public class Search {
       TopDocs hits = s.search(query, 1);
 
       Document doc = s.doc(hits.scoreDocs[0].doc);
-
+      closeSearcher(s);
       return doc;
-
     } catch (Exception e) {
       return null;
     }
@@ -108,14 +107,29 @@ public class Search {
       query = qp.parse(code);
       Searcher s = Search.getLuceneSearcher();
       TopDocs hits = s.search(query, 1);
-
+      closeSearcher(s);
       return hits.scoreDocs[0].doc;
-
     } catch (Exception e) {
       return 0;
     }
   }
 
+  
+  public static void closeSearcher(Searcher s) {
+  	if (s == null) {
+  		return;
+  	}
+  	try {
+	    if (s instanceof IndexSearcher) {
+	    	IndexSearcher is = (IndexSearcher) s;
+				is.getIndexReader().close();
+	    	s.close();
+	    }
+		} catch (IOException e) {
+			// silent OK
+		}
+  }
+  
   public static Query getQuery(String queryString) throws TsabException {
 
     Query query = null;

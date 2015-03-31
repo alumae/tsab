@@ -128,7 +128,7 @@
 
   <property name="app.name"      value="myapp"/>
   <property name="app.path"      value="/${app.name}"/>
-  <property name="app.version"   value="0.1-dev"/>
+  <property name="app.version"   value="1.1"/>
   <property name="build.home"    value="${basedir}/build"/>
   <property name="catalina.home" value="../../../.."/> <!-- UPDATE THIS! -->
   <property name="dist.home"     value="${basedir}/dist"/>

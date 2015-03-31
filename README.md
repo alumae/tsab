@@ -11,6 +11,6 @@ Tanel Alumäe and Ahti Kitsik. TSAB - web interface for transcribed speech colle
 Demo
 ----
 
-The system is live at at http://bark.phon.ioc.ee/tsab, acting as a front-end for automatically transcribed
+The system is live at http://bark.phon.ioc.ee/tsab, acting as a front-end for automatically transcribed
 Estonian radio shows.
 
