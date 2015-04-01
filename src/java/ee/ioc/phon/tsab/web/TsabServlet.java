@@ -222,6 +222,12 @@ public class TsabServlet extends FreemarkerServlet {
       request.setAttribute("currentCategoryId", new Long(cat));
     }
 
+    if ("true".equals(getServletConfig().getInitParameter("EnableEdit"))) {
+    	request.setAttribute("enableEdit", "true");
+    } else {
+    	request.setAttribute("enableEdit", "false");
+    }
+    
   }
 
   private void initLoginModel(HttpServletRequest request, HttpServletResponse response) {

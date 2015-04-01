@@ -20,6 +20,11 @@
 			<param-value>et</param-value>
 		</init-param>
 
+        <init-param>
+            <param-name>EnableEdit</param-name>
+            <param-name>false</param-name>
+        </init-param>
+
 		<!-- FreemarkerServlet settings: -->
 		<init-param>
 			<param-name>TemplatePath</param-name>

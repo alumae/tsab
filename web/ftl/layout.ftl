@@ -55,6 +55,7 @@
 	<div id="page_navi" class="wrap">
 	  <div class="col-right">
 	    <ul id="nav">
+	      <#if enableEdit = "true">
 		  <li class="page_item"><a href="account">
 		  <#if tsabuser?exists>
 		  	${tsabuser.fullName} (${tsabuser.email})
@@ -62,6 +63,7 @@
 		  	${loc.login}
 		  </#if>
 		  </a>	
+		  </#if>
 	      <li class="page_item"><a href="about">${loc.about}</a>
 	      <li class="page_item last"><a href="mailto:${loc.email_address}">${loc.email}</a>
 	    </ul>
