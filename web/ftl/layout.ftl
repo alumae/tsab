@@ -55,7 +55,7 @@
 	<div id="page_navi" class="wrap">
 	  <div class="col-right">
 	    <ul id="nav">
-	      <#if enableEdit = "true">
+	      <#if doEnableEdit>
 		  <li class="page_item"><a href="account">
 		  <#if tsabuser?exists>
 		  	${tsabuser.fullName} (${tsabuser.email})

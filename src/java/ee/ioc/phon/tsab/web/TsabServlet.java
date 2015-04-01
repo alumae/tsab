@@ -45,7 +45,11 @@ public class TsabServlet extends FreemarkerServlet {
   private final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
   private final static String PARAM_TSAB_LANGUAGE = "TsabLanguage";
+  
+  private final static String PARAM_ENABLE_EDITING = "EnableEditing";
 
+  private boolean doEnableEditing = false;
+  
   private ResourceBundle bundle;
 
   public TsabServlet() {
@@ -222,11 +226,7 @@ public class TsabServlet extends FreemarkerServlet {
       request.setAttribute("currentCategoryId", new Long(cat));
     }
 
-    if ("true".equals(getServletConfig().getInitParameter("EnableEdit"))) {
-    	request.setAttribute("enableEdit", "true");
-    } else {
-    	request.setAttribute("enableEdit", "false");
-    }
+   	request.setAttribute("doEnableEdit", doEnableEditing);
     
   }
 
@@ -403,6 +403,8 @@ public class TsabServlet extends FreemarkerServlet {
       public void setSetting(String key, String value) throws TemplateException {
         if (key != null && PARAM_TSAB_LANGUAGE.equalsIgnoreCase(key)) {
           initLanguage(this, value);
+        } else if (key != null && PARAM_ENABLE_EDITING.equalsIgnoreCase(key)) {
+        	doEnableEditing = Boolean.parseBoolean(value);
         } else {
           super.setSetting(key, value);
         }

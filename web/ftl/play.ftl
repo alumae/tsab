@@ -157,7 +157,7 @@ Event.observe(window, 'load', function() {
 
 <p>${loc.play_count}: <#if transcription.viewCount?exists>${transcription.viewCount}</#if><br/>
 
-<#if enableEdit = "true">
+<#if doEnableEdit>
 <#if tsabuser?exists><a href="javascript:donothing();" onclick="javascript:toggleEdit();"><span id="editLink">
 ${loc.play_correction_edit}
 </span></a> ${loc.play_correction_legend}
