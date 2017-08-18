@@ -15,6 +15,14 @@ TTÜ Küberneetika instituudi <a href="http://www.phon.ioc.ee">foneetika ja kõn
 <a href="http://codehoop.com/">OÜ Codehoop</a>.
 
 <p>
+Alates 2011. a on süsteemi aluseks olevat kõnetuvastustehnoloogiat arendatud riikliku programmi
+"Eesti keeletehnoloogia (2011-2017)" raames. Projektist on lähemalt juttu
+<a href="https://www.keeletehnoloogia.ee/et/ekt-projektid/konetuvastus-2">siin</a>.
+
+
+<p>
+
+
  
 Veebirakenduse lähtekood on saadaval <a href="http://www.gnu.org/licenses/agpl.html">AGPL</a> litsentsi alusel (versioon 3). 
 AGPL litsents on sarnane GPL litsensile, kuid lisab klausli, mis nõuab tarkvara abil avaliku teenuse osutajalt lähtekoodi
@@ -28,17 +36,16 @@ Salvestuste automaatset transkribeerimist ja regulaarset lisamist süsteemi teos
 veebirakenduse osa, ning ei ole hetkel ka vabalt saadaval. Tulevikus on plaanis siiski ka tuvastustehnoloogiat
 huvitatutele vabalt levitada. Tuvastustes on kasutatud mitmesugust tarkava, millest tähtsamad on:
 <ul>
- <li><a href="http://www-i6.informatik.rwth-aachen.de/rwth-asr/">RWTH ASR</a>: kõnetuvastus
+ <li><a href="https://github.com/kaldi-asr/kaldi">Kaldi</a>: kõnetuvastus
  <li><a href="http://www-speech.sri.com/projects/srilm/">SRILM</a>: statistilise keelemudeli loomine
  <li><a href="http://lium3.univ-lemans.fr/diarization/doku.php/welcome">LIUM_SpkDiarization</a>: kõnesalvestuse jagamine kõnelõikudeks, lõikude grupeerimine kõneleja järgi
 </ul>
 Enamus kasutatud tarkvarast on vaba lähtekoodiga.
 <p>
 
-Kõnetuvastuse akustiliste mudelite treenimiseks on kasutatud hetkel umbes 50 tundi käsitsi märgendatud kõnet.
-Keelemudeli loomiseks on kasutatud mitmesuguseid tekstiressursse, millest enamik on saadaval 
-Tartu Ülikooli Arvutilingvistika Uurimisrühma <a href="http://www.cl.ut.ee/">kodulehel</a>.
+Kõnetuvastuse akustiliste mudelite treenimiseks on kasutatud hetkel umbes 220 tundi käsitsi märgendatud kõnet.
 
 <p>Kõnetuvastuse toimimise ülevaatliku kirjeldusega saab tutvuda <a href="http://www.phon.ioc.ee/dokuwiki/doku.php?id=konetuvastus.et">siin</a>.
+
 
  

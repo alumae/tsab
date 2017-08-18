@@ -46,7 +46,7 @@ public class TsabServlet extends FreemarkerServlet {
 
   private final static String PARAM_TSAB_LANGUAGE = "TsabLanguage";
   
-  private final static String PARAM_ENABLE_EDITING = "EnableEditing";
+  private final static String PARAM_ENABLE_EDITING = "EnableEdit";
 
   private boolean doEnableEditing = false;
   

@@ -17,16 +17,18 @@ jQuery.noConflict();
 	<script type='text/javascript'>
 	 	var zebug = true;
 	</script>
-	<script type="text/javascript" src="../soundmanager/script/soundmanager2.js"></script>
+	<script type="text/javascript" src="../soundmanager/script/soundmanager2.js?ver=1.3"></script>
 <#else>
 	<script type='text/javascript'>
 		var zebug = false;
 	</script>		
-	<script type="text/javascript" src="../soundmanager/script/soundmanager2-nodebug-jsmin.js"></script>
+	<script type="text/javascript" src="../soundmanager/script/soundmanager2-nodebug-jsmin.js?ver=1.3"></script>
 </#if>
 
 <script type="text/javascript">
 soundManager.url = '../soundmanager/swf/';
+
+
 
 <#if zebug?exists>
 soundManager.debugMode = true;
